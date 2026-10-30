@@ -1,0 +1,2024 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Учи.РУНЕТ · Сленг и Мемы</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{--bg:#06060f;--card:rgba(255,255,255,.035);--card-hover:rgba(255,255,255,.07);--border:rgba(255,255,255,.08);--text:#ececf5;--muted:#8f8fa8;--cyan:#22d3ee;--purple:#a855f7;--pink:#ec4899;--gold:#fbbf24;--green:#34d399;--red:#f87171;--orange:#fb923c}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
+input,textarea,select{user-select:text;-webkit-user-select:text}
+.blob{position:fixed;border-radius:50%;filter:blur(110px);opacity:.28;z-index:0;pointer-events:none}
+.blob-1{width:520px;height:520px;background:#7c3aed;top:-180px;left:-160px}
+.blob-2{width:460px;height:460px;background:#ec4899;top:40%;right:-180px}
+.blob-3{width:420px;height:420px;background:#0891b2;bottom:-180px;left:28%}
+.container{position:relative;z-index:1;max-width:1280px;margin:0 auto;padding:0 20px 80px}
+.top-bar{position:fixed;top:20px;right:24px;z-index:200;display:flex;align-items:center;gap:10px}
+.coins-badge{background:rgba(251,191,36,.15);border:1px solid rgba(251,191,36,.4);color:var(--gold);padding:8px 14px;border-radius:999px;font-weight:800;font-size:14px;display:flex;align-items:center;gap:6px;min-height:40px}
+.profile-btn{width:56px;height:56px;border-radius:50%;border:2px solid var(--border);background:linear-gradient(135deg,#a855f7,#ec4899);color:#fff;font-size:24px;cursor:pointer;display:flex;align-items:center;justify-content:center;position:relative;min-width:56px;min-height:56px}
+.profile-btn .streak-badge{position:absolute;bottom:-4px;right:-4px;background:var(--gold);color:#000;font-size:11px;font-weight:800;padding:2px 6px;border-radius:999px;border:2px solid var(--bg)}
+header{padding:60px 0 24px;text-align:center}
+.logo-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 18px;background:rgba(168,85,247,.1);border:1px solid rgba(168,85,247,.3);border-radius:999px;font-size:11px;font-weight:700;color:var(--purple);margin-bottom:22px;letter-spacing:1px;text-transform:uppercase}
+.logo-badge .dot{width:8px;height:8px;border-radius:50%;background:var(--purple);box-shadow:0 0 12px var(--purple)}
+h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(32px,6vw,62px);font-weight:700;line-height:1.05;letter-spacing:-2px;margin-bottom:8px}
+h1 .grad{background:linear-gradient(135deg,#22d3ee,#a855f7,#ec4899,#fbbf24);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;background-size:300% 300%}
+.search-wrap{max-width:680px;margin:30px auto 0;position:relative}
+.search-icon{position:absolute;left:20px;top:50%;transform:translateY(-50%);width:22px;height:22px;stroke:var(--muted);pointer-events:none}
+#search{width:100%;padding:18px 56px;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:16px;font-size:16px;color:var(--text);font-family:inherit;outline:none}
+#search::placeholder{color:var(--muted)}
+#clear{position:absolute;right:14px;top:50%;transform:translateY(-50%);width:32px;height:32px;border-radius:50%;border:none;background:rgba(255,255,255,.08);color:var(--muted);font-size:18px;cursor:pointer;display:none;align-items:center;justify-content:center}
+#clear.show{display:flex}
+.main-nav{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:26px auto 0}
+.nav-btn{padding:12px 22px;border-radius:12px;border:1px solid var(--border);background:transparent;color:var(--muted);font-size:14px;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:8px;min-height:44px}
+.nav-btn.active{background:linear-gradient(135deg,#a855f7,#ec4899);border-color:transparent;color:#fff}
+.nav-btn.lesson-btn.active{background:linear-gradient(135deg,#fbbf24,#ec4899)}
+.nav-btn.ratings-btn.active{background:linear-gradient(135deg,#22d3ee,#34d399)}
+.view{display:none}.view.active{display:block}
+.tabs{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:26px auto 0}
+.tab-btn{padding:10px 18px;border-radius:12px;border:1px solid var(--border);background:transparent;color:var(--muted);font-size:13.5px;font-weight:700;cursor:pointer;min-height:42px}
+.tab-btn.active{background:linear-gradient(135deg,#a855f7,#ec4899);border-color:transparent;color:#fff}
+.tab-btn.new-tab.active{background:linear-gradient(135deg,#fbbf24,#ec4899)}
+.tab-btn.fav-tab.active{background:linear-gradient(135deg,#f87171,#ec4899)}
+.tab-btn.use-tab.active{background:linear-gradient(135deg,#34d399,#22d3ee)}
+.tab-btn.meme-tab.active{background:linear-gradient(135deg,#fbbf24,#f472b6)}
+.tab-btn.retro-tab.active{background:linear-gradient(135deg,#94a3b8,#a855f7)}
+.years{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin:14px auto 0;max-width:1000px}
+.year-btn{padding:8px 14px;border-radius:999px;border:1px solid var(--border);background:transparent;color:var(--muted);font-size:13px;font-weight:700;cursor:pointer;min-height:38px}
+.year-btn.active{background:rgba(168,85,247,.2);border-color:var(--purple);color:var(--purple)}
+#yearFilterWrap{display:none;text-align:center;margin:16px auto 0}
+#yearFilter{padding:12px 18px;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:12px;color:var(--text);font-family:inherit;font-size:15px;font-weight:600;cursor:pointer;outline:none;min-height:44px}
+#yearFilter option{background:#12122a;color:var(--text)}
+.stats-bar{margin:28px 0 8px;color:var(--muted);font-size:13px}
+.stats-bar b{color:var(--text)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px;margin-top:16px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px;transition:all .25s;cursor:pointer}
+.card:hover{background:var(--card-hover);border-color:rgba(255,255,255,.16);transform:translateY(-3px)}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:8px}
+.card-word{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:700;flex:1;word-break:break-word}
+.card-badges{display:flex;gap:4px;flex-wrap:wrap;flex-shrink:0;align-items:center}
+.like-btn{background:none;border:none;font-size:20px;cursor:pointer;padding:4px;line-height:1;opacity:.7;min-width:32px;min-height:32px}
+.like-btn.liked{opacity:1}
+.badge{padding:3px 8px;border-radius:999px;font-size:10px;font-weight:800;text-transform:uppercase}
+.badge-year{background:var(--accent-bg,rgba(168,85,247,.15));color:var(--accent,var(--purple));border:1px solid var(--accent-border,rgba(168,85,247,.3))}
+.badge-type{background:rgba(52,211,153,.12);color:var(--green);border:1px solid rgba(52,211,153,.3)}
+.badge-type.meme{background:rgba(251,191,36,.12);color:var(--gold);border:1px solid rgba(251,191,36,.3)}
+.badge-new{background:rgba(236,72,153,.2);color:#fff;border:1px solid var(--pink)}
+.card-short{color:#d0d0e0;font-size:13.5px;line-height:1.5;margin-bottom:12px}
+.card-foot{display:flex;align-items:center;gap:6px;font-size:11.5px}
+.pop-bar{height:5px;background:rgba(255,255,255,.06);border-radius:999px;overflow:hidden;flex:1}
+.pop-fill{height:100%;background:linear-gradient(90deg,var(--accent,var(--purple)),var(--pink));border-radius:999px}
+.era-2000,.era-2001,.era-2002,.era-2003{--accent:#94a3b8;--accent-bg:rgba(148,163,184,.12);--accent-border:rgba(148,163,184,.3)}
+.era-2004,.era-2005,.era-2006,.era-2007,.era-2008,.era-2009{--accent:#64748b;--accent-bg:rgba(100,116,139,.12);--accent-border:rgba(100,116,139,.3)}
+.era-2010,.era-2011,.era-2012,.era-2013,.era-2014{--accent:#22d3ee;--accent-bg:rgba(34,211,238,.12);--accent-border:rgba(34,211,238,.3)}
+.era-2015,.era-2016,.era-2017,.era-2018,.era-2019{--accent:#34d399;--accent-bg:rgba(52,211,153,.12);--accent-border:rgba(52,211,153,.3)}
+.era-2020,.era-2021{--accent:#a855f7;--accent-bg:rgba(168,85,247,.12);--accent-border:rgba(168,85,247,.3)}
+.era-2022,.era-2023{--accent:#f472b6;--accent-bg:rgba(244,114,182,.12);--accent-border:rgba(244,114,182,.3)}
+.era-2024,.era-2025{--accent:#ec4899;--accent-bg:rgba(236,72,153,.12);--accent-border:rgba(236,72,153,.3)}
+.era-2026,.era-2027{--accent:#fbbf24;--accent-bg:rgba(251,191,36,.12);--accent-border:rgba(251,191,36,.3)}
+.empty{text-align:center;padding:80px 20px;color:var(--muted)}
+.empty .icon{font-size:56px;margin-bottom:14px}
+.empty h3{color:var(--text);font-size:19px;margin-bottom:6px}
+.panel{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:24px;margin-top:24px}
+.panel-title{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;margin-bottom:16px;text-align:center}
+.panel-sub{color:var(--muted);text-align:center;margin-bottom:24px}
+.mascot{font-size:64px;text-align:center;margin-bottom:12px}
+.mascot-speech{background:rgba(168,85,247,.1);border:1px solid rgba(168,85,247,.3);border-radius:16px;padding:16px 20px;margin-bottom:20px;font-size:16px;line-height:1.5;text-align:center}
+.lesson-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;font-size:14px;gap:8px}
+.lesson-progress{flex:1;height:8px;background:rgba(255,255,255,.08);border-radius:999px;margin:0 8px;overflow:hidden}
+.lesson-progress-fill{height:100%;background:linear-gradient(90deg,#22d3ee,#a855f7);border-radius:999px;transition:width .3s}
+.question-text{font-size:20px;line-height:1.5;margin-bottom:20px;text-align:center;font-weight:600}
+.options-grid{display:grid;grid-template-columns:1fr;gap:10px;margin-bottom:20px}
+.option-btn{padding:16px 20px;border-radius:14px;border:2px solid var(--border);background:rgba(255,255,255,.03);color:var(--text);font-size:15px;font-family:inherit;text-align:left;cursor:pointer;min-height:52px;line-height:1.4}
+.option-btn.selected{border-color:var(--purple);background:rgba(168,85,247,.1)}
+.option-btn.correct{border-color:var(--green);background:rgba(52,211,153,.15)}
+.option-btn.wrong{border-color:var(--red);background:rgba(248,113,113,.15)}
+.option-btn.hint-highlight{box-shadow:0 0 0 3px rgba(251,191,36,.7);background:rgba(251,191,36,.12)}
+.feedback-box{text-align:center;font-size:17px;font-weight:600;padding:14px;border-radius:12px;margin-bottom:16px;display:none;line-height:1.5}
+.feedback-box.show{display:block}
+.feedback-box.ok{background:rgba(52,211,153,.12);color:var(--green)}
+.feedback-box.bad{background:rgba(248,113,113,.12);color:var(--red)}
+.btn{padding:14px 28px;border-radius:14px;border:none;font-family:inherit;font-size:15px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px}
+.btn-primary{background:linear-gradient(135deg,#a855f7,#ec4899);color:#fff;width:100%}
+.btn-secondary{background:rgba(255,255,255,.06);color:var(--text);width:100%;margin-top:8px}
+.btn-abort{background:rgba(248,113,113,.12);color:var(--red);border:1px solid rgba(248,113,113,.3);min-width:150px}
+.btn-hint{background:rgba(251,191,36,.15);color:var(--gold);border:1px solid rgba(251,191,36,.4);width:auto;margin:0;padding:10px 16px;min-height:42px;font-size:13px}
+.btn-hint:disabled{opacity:.4;cursor:not-allowed}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.btn-shop{background:linear-gradient(135deg,#fbbf24,#ec4899);color:#fff;width:100%;margin-bottom:16px;padding:14px 20px;font-size:15px;border:none;border-radius:14px;cursor:pointer;font-weight:700;display:flex;align-items:center;justify-content:center;gap:8px;min-height:48px}
+.results-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px;margin:20px 0}
+.result-box{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:14px;padding:16px;text-align:center}
+.result-box .val{font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;margin-bottom:4px}
+.result-box .lbl{font-size:11px;color:var(--muted);text-transform:uppercase;font-weight:600}
+.match-container{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+.match-col{display:flex;flex-direction:column;gap:8px}
+.match-col-header{font-size:12px;font-weight:800;color:var(--purple);text-transform:uppercase;letter-spacing:1px;padding:8px 12px;background:rgba(168,85,247,.1);border:1px solid rgba(168,85,247,.3);border-radius:10px;text-align:center}
+.match-col.right .match-col-header{color:var(--cyan);background:rgba(34,211,238,.1);border-color:rgba(34,211,238,.3)}
+.match-item{padding:14px 16px;border-radius:12px;border:2px solid var(--border);background:rgba(255,255,255,.03);font-size:14px;cursor:pointer;min-height:44px;display:flex;align-items:center;line-height:1.4;transition:all .15s}
+.match-item:hover{border-color:rgba(255,255,255,.2)}
+.match-item.selected{border-color:var(--purple);background:rgba(168,85,247,.15)}
+.match-item.matched{border-color:var(--green);background:rgba(52,211,153,.12);opacity:.7;cursor:default}
+.match-item.wrong-pair{border-color:var(--red);background:rgba(248,113,113,.12);opacity:.7;cursor:default}
+.match-progress{margin-bottom:12px;text-align:center;font-size:13px;color:var(--muted);font-weight:600}
+.match-progress b{color:var(--green)}
+.difficulty-label{display:inline-block;padding:5px 14px;border-radius:999px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:12px}
+.difficulty-label.easy{background:rgba(52,211,153,.15);color:var(--green);border:1px solid rgba(52,211,153,.4)}
+.difficulty-label.normal{background:rgba(251,191,36,.15);color:var(--gold);border:1px solid rgba(251,191,36,.4)}
+.difficulty-label.hard{background:rgba(251,146,60,.15);color:var(--orange);border:1px solid rgba(251,146,60,.4)}
+.difficulty-label.expert{background:rgba(168,85,247,.15);color:var(--purple);border:1px solid rgba(168,85,247,.4)}
+.text-input-wrap{margin:20px 0}
+.text-answer-input{width:100%;padding:16px 20px;border-radius:14px;border:2px solid var(--border);background:rgba(255,255,255,.03);color:var(--text);font-family:inherit;font-size:16px;outline:none;min-height:52px;user-select:text;-webkit-user-select:text}
+.text-answer-input::placeholder{color:var(--muted)}
+.text-answer-input:focus{border-color:var(--purple);background:rgba(168,85,247,.05)}
+.text-answer-input.correct{border-color:var(--green);background:rgba(52,211,153,.15)}
+.text-answer-input.wrong{border-color:var(--red);background:rgba(248,113,113,.15)}
+.text-answer-input:disabled{opacity:.9;cursor:not-allowed}
+.text-hint{margin-top:12px;padding:14px 16px;border-radius:12px;background:rgba(168,85,247,.08);border:1px solid rgba(168,85,247,.2);color:var(--text);font-size:14px;line-height:1.5;user-select:text;-webkit-user-select:text}
+.text-hint b{color:var(--purple)}
+.hint-output{margin-top:12px;padding:14px 16px;border-radius:12px;background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.3);color:var(--text);font-size:14px;line-height:1.5;display:none}
+.hint-output.show{display:block}
+.hint-output b{color:var(--gold)}
+.difficulty-stats{margin-top:16px;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:16px;padding:16px}
+.difficulty-stats-title{font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:700;margin-bottom:12px}
+.difficulty-stats-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:14px}
+.difficulty-stats-row:last-child{border-bottom:none}
+.difficulty-stats-row .label{font-weight:600}
+.difficulty-stats-row .label.easy{color:var(--green)}
+.difficulty-stats-row .label.normal{color:var(--gold)}
+.difficulty-stats-row .label.hard{color:var(--orange)}
+.difficulty-stats-row .label.expert{color:var(--purple)}
+.difficulty-stats-row .values{font-size:13px}
+.difficulty-stats-row .values .correct{color:var(--green);font-weight:700}
+.difficulty-stats-row .values .wrong{color:var(--red);font-weight:700}
+.difficulty-stats-row .values .total{color:var(--muted)}
+.profile-panel{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:24px}
+.profile-header{display:flex;align-items:center;gap:16px;margin-bottom:24px;flex-wrap:wrap}
+.avatar-edit{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,#a855f7,#ec4899);display:flex;align-items:center;justify-content:center;font-size:40px;cursor:pointer;position:relative;flex-shrink:0}
+.avatar-edit .edit-badge{position:absolute;bottom:-2px;right:-2px;background:var(--purple);width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;border:2px solid var(--bg)}
+.nickname-input{background:transparent;border:none;color:var(--text);font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;outline:none;border-bottom:2px solid transparent;padding:2px 0;max-width:240px;width:100%}
+.nickname-wrap{display:flex;flex-direction:column;gap:4px;flex:1;min-width:180px}
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:24px}
+.stat-box{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:14px;padding:16px;text-align:center}
+.stat-box .val{font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;color:var(--gold);margin-bottom:4px;display:flex;align-items:center;justify-content:center;gap:6px}
+.stat-box .lbl{font-size:12px;color:var(--muted);text-transform:uppercase;font-weight:600}
+.knowledge-bar-wrap{margin:20px 0}
+.knowledge-label{display:flex;justify-content:space-between;font-size:14px;font-weight:600;margin-bottom:8px}
+.knowledge-bar{height:14px;background:rgba(255,255,255,.08);border-radius:999px;overflow:hidden}
+.knowledge-fill{height:100%;background:linear-gradient(90deg,#22d3ee,#a855f7,#ec4899);border-radius:999px}
+.promo-block{margin-top:20px;padding:16px;background:rgba(251,191,36,.05);border:1px solid rgba(251,191,36,.2);border-radius:14px}
+.promo-title{font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:700;margin-bottom:10px;color:var(--gold)}
+.promo-input{flex:1;padding:12px 16px;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:12px;color:var(--text);font-family:inherit;font-size:15px;outline:none;min-height:44px;user-select:text;-webkit-user-select:text}
+.promo-input:focus{border-color:var(--purple)}
+.promo-msg{font-size:13px;margin-top:10px;min-height:16px;font-weight:600}
+.history-list{display:flex;flex-direction:column;gap:8px;margin-top:16px}
+.history-item{display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:12px;padding:12px 16px;font-size:14px;gap:8px;flex-wrap:wrap;cursor:pointer}
+.history-item:hover{background:rgba(255,255,255,.06);border-color:rgba(168,85,247,.3)}
+.history-item .h-date{color:var(--muted);font-size:12px}
+.history-item .h-score{font-weight:700;color:var(--green)}
+.history-detail-q{padding:12px 14px;border-radius:10px;margin-bottom:8px;border-left:3px solid}
+.history-detail-q.ok{background:rgba(52,211,153,.06);border-left-color:var(--green)}
+.history-detail-q.bad{background:rgba(248,113,113,.06);border-left-color:var(--red)}
+.section-title{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+footer{text-align:center;padding:50px 20px 20px;color:var(--muted);font-size:12px;border-top:1px solid var(--border);margin-top:60px}
+#toast{position:fixed;left:50%;bottom:32px;transform:translateX(-50%) translateY(20px);background:linear-gradient(135deg,#ec4899,#a855f7);color:#fff;padding:16px 24px;border-radius:14px;font-weight:700;font-size:14px;z-index:999;opacity:0;pointer-events:none;transition:all .3s;max-width:90vw;text-align:center}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.diff-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:20px 0}
+.difficulty-card{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:16px;padding:16px;text-align:center;cursor:pointer;transition:all .15s}
+.difficulty-card:hover{background:rgba(255,255,255,.06)}
+.difficulty-card.selected{border:2px solid var(--purple);background:rgba(168,85,247,.08)}
+.difficulty-card .d-emoji{font-size:28px}
+.difficulty-card .d-name{font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:700;margin:6px 0}
+.difficulty-card .d-desc{font-size:11px;color:var(--muted);line-height:1.3}
+.lesson-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+.lesson-actions .btn-primary{flex:1 1 200px}
+.count-slider-wrap{margin:20px 0;padding:16px;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:14px}
+.count-slider-wrap > label{display:block;font-size:14px;font-weight:600;margin-bottom:12px;text-align:center;color:var(--muted)}
+.count-slider-wrap > label b{color:var(--purple);font-size:18px}
+.count-input-row{display:flex;align-items:center;gap:12px}
+#qCountSlider{flex:1;height:8px;-webkit-appearance:none;appearance:none;background:rgba(255,255,255,.1);border-radius:999px;outline:none}
+#qCountSlider::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#a855f7,#ec4899);cursor:pointer;border:2px solid #fff;box-shadow:0 0 10px rgba(168,85,247,.5)}
+#qCountSlider::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#a855f7,#ec4899);cursor:pointer;border:2px solid #fff}
+#qCountInput{width:90px;padding:10px;border-radius:10px;border:1px solid var(--border);background:rgba(255,255,255,.05);color:var(--text);font-family:inherit;font-size:16px;font-weight:700;text-align:center;outline:none}
+.year-range{display:flex;gap:12px;justify-content:center;align-items:center;margin:16px 0;flex-wrap:wrap}
+.year-range label{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--muted);font-weight:600}
+.year-range select{padding:10px 14px;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:10px;color:var(--text);font-family:inherit;font-size:14px;font-weight:600;cursor:pointer;outline:none;min-height:42px}
+.year-range select option{background:#12122a;color:var(--text)}
+.ratings-modes{display:flex;gap:8px;justify-content:center;margin:16px 0;flex-wrap:wrap}
+.rating-mode-btn{padding:12px 28px;border-radius:12px;border:1px solid var(--border);background:transparent;color:var(--muted);font-size:15px;font-weight:700;cursor:pointer;min-height:48px}
+.rating-mode-btn.active{background:linear-gradient(135deg,#22d3ee,#34d399);border-color:transparent;color:#fff}
+.rating-progress{margin-bottom:16px}
+.rating-progress-bar{height:6px;background:rgba(255,255,255,.08);border-radius:999px;overflow:hidden;margin-bottom:6px}
+.rating-progress-fill{height:100%;background:linear-gradient(90deg,#22d3ee,#34d399);border-radius:999px;transition:width .3s}
+.rating-progress-text{text-align:center;font-size:12px;color:var(--muted);font-weight:600}
+.rating-card{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:20px;padding:24px;margin-bottom:16px}
+.rating-word{font-family:'Space Grotesk',sans-serif;font-size:32px;font-weight:700;margin-bottom:12px;text-align:center;word-break:break-word}
+.rating-badges{display:flex;gap:8px;justify-content:center;margin-bottom:16px;flex-wrap:wrap}
+.rating-desc{font-size:15px;line-height:1.6;color:#d8d8e6;margin-bottom:12px;text-align:left}
+.rating-syn{font-size:13px;color:var(--muted);margin-bottom:12px;text-align:left}
+.rating-example{font-size:14px;color:var(--muted);padding:12px 14px;background:rgba(0,0,0,.3);border-left:3px solid var(--purple);border-radius:8px;font-style:italic;text-align:left;margin-bottom:16px}
+.rating-stars{display:flex;gap:8px;justify-content:center}
+.star-btn{font-size:38px;background:none;border:none;color:rgba(255,255,255,.15);cursor:pointer;padding:4px;transition:all .15s;line-height:1}
+.star-btn.active{color:var(--gold);text-shadow:0 0 12px rgba(251,191,36,.5)}
+.star-btn:hover{transform:scale(1.15)}
+.rating-nav{display:flex;gap:12px}
+.rating-nav .btn{flex:1}
+.rating-badge-self{display:inline-block;margin-top:8px;padding:3px 10px;border-radius:999px;background:rgba(251,191,36,.15);color:var(--gold);font-size:12px;font-weight:700;border:1px solid rgba(251,191,36,.3)}
+.shop-item{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:12px;padding:16px;display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:8px}
+.shop-item-info{flex:1}
+.shop-item-name{font-weight:700;font-size:15px;margin-bottom:4px}
+.shop-item-desc{color:var(--muted);font-size:12px}
+.shop-item-price{color:var(--gold);font-weight:800;font-size:14px}
+@media(max-width:600px){
+  .grid{grid-template-columns:1fr}header{padding:44px 0 20px}.panel{padding:16px}
+  .match-container{grid-template-columns:1fr;gap:16px}
+  .top-bar{top:12px;right:12px;gap:6px}.profile-btn{width:44px;height:44px;min-width:44px;min-height:44px;font-size:18px}
+  .coins-badge{padding:6px 10px;font-size:12px;min-height:36px}
+  .tabs{gap:6px}.tab-btn{padding:9px 11px;font-size:12px}
+  .container{padding:0 14px 80px}h1{letter-spacing:-1px}
+  .diff-grid{grid-template-columns:repeat(2,1fr)}
+  .question-text{font-size:17px}.option-btn{padding:14px 16px;font-size:14px}
+  .rating-word{font-size:26px}
+}
+</style>
+</head>
+<body>
+<div class="blob blob-1"></div><div class="blob blob-2"></div><div class="blob blob-3"></div>
+<div class="top-bar">
+  <div class="coins-badge" title="Монетки">🪙 <span id="coinsCount">0</span></div>
+  <button class="profile-btn" id="profileBtn"><span id="topAvatar">😎</span><span class="streak-badge" id="streakBadge">0</span></button>
+</div>
+<div class="container">
+<header>
+  <div class="logo-badge"><span class="dot"></span>УЧИ.РУНЕТ · СЛЕНГ И МЕМЫ</div>
+  <h1>Учи <span class="grad">РУНЕТ!</span></h1>
+  <div class="search-wrap" id="searchWrap">
+    <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    <input id="search" type="text" placeholder="Например: скуф, вайб, тильт, шуешь, охайо..." autocomplete="off">
+    <button id="clear">✕</button>
+  </div>
+  <div class="main-nav">
+    <button class="nav-btn active" data-view="dictionary">📖 Словарь</button>
+    <button class="nav-btn lesson-btn" data-view="lesson">🎓 Урок</button>
+    <button class="nav-btn ratings-btn" data-view="ratings">⭐ Оценки</button>
+  </div>
+</header>
+
+<div id="view-dictionary" class="view active">
+  <div class="tabs" id="tabs">
+    <button class="tab-btn active" data-tab="all">Все</button>
+    <button class="tab-btn new-tab" data-tab="new">✨ Новые</button>
+    <button class="tab-btn" data-tab="popular">🔥 Популярные</button>
+    <button class="tab-btn fav-tab" data-tab="favorite">❤️ Любимые</button>
+    <button class="tab-btn use-tab" data-tab="useful">💡 Полезные</button>
+    <button class="tab-btn meme-tab" data-tab="meme">😂 Мемы</button>
+    <button class="tab-btn retro-tab" data-tab="retro">📼 Ретро</button>
+  </div>
+  <div class="years" id="years"></div>
+  <div id="yearFilterWrap">
+    <label style="color:var(--muted);font-size:13px;font-weight:600;margin-right:8px;">📅 Год:</label>
+    <select id="yearFilter"><option value="all">Все</option></select>
+  </div>
+  <div class="stats-bar" id="stats"></div>
+  <main class="grid" id="grid"></main>
+  <div class="empty" id="empty" style="display:none"><div class="icon">🔍</div><h3>Ничего не нашлось</h3><p>Попробуй другой фильтр</p></div>
+</div>
+
+<div id="view-lesson" class="view">
+  <div id="lessonSetup" class="panel">
+    <div class="mascot">😀</div>
+    <div class="mascot-speech">Готов проверить, насколько хорошо ты знаешь сленг и мемы РУНЕТа? Выбери сложность, количество вопросов и годы!</div>
+    <div class="panel-title">🎓 Урок</div>
+    <div class="panel-sub">Выбери сложность</div>
+    <div class="diff-grid" id="difficultyGrid"></div>
+    <div class="count-slider-wrap">
+      <label>Количество вопросов: <b id="qCountVal">10</b> <span style="color:var(--muted);font-size:12px;">(от 3 до 1000)</span></label>
+      <div class="count-input-row">
+        <input type="range" id="qCountSlider" min="3" max="1000" value="10" step="1">
+        <input type="number" id="qCountInput" min="3" max="1000" value="10">
+      </div>
+    </div>
+    <div class="year-range">
+      <label>📅 От: <select id="lessonYearFrom"></select></label>
+      <label>До: <select id="lessonYearTo"></select></label>
+    </div>
+    <button class="btn btn-primary" id="startLessonBtn">🚀 Начать урок</button>
+  </div>
+  <div id="lessonActive" class="panel" style="display:none;">
+    <div class="lesson-top">
+      <span id="lessonCounter">Задание 1/7</span>
+      <div class="lesson-progress"><div class="lesson-progress-fill" id="lessonProgressFill"></div></div>
+      <span id="lessonMistakes" style="color:var(--red);">❌ 0</span>
+    </div>
+    <div style="text-align:center;"><div class="difficulty-label" id="lessonDifficulty"></div></div>
+    <div style="display:flex;gap:8px;justify-content:center;margin-bottom:14px;flex-wrap:wrap;">
+      <button class="btn btn-hint" id="hintBtn">💡 Подсказка (100 🪙)</button>
+      <button class="btn btn-hint" id="dictBtn">📖 Словарь (10000 🪙)</button>
+    </div>
+    <div class="mascot" id="lessonMascot">😀</div>
+    <div class="mascot-speech" id="lessonSpeech"></div>
+    <div class="question-text" id="lessonQuestion"></div>
+    <div id="lessonOptionsContainer"></div>
+    <div class="hint-output" id="hintOutput"></div>
+    <div class="feedback-box" id="lessonFeedback"></div>
+    <div class="lesson-actions">
+      <button class="btn btn-primary" id="lessonSubmitBtn">Ответить</button>
+      <button class="btn btn-abort" id="abortLessonBtn">⏹ Завершить</button>
+    </div>
+  </div>
+  <div id="lessonResults" class="panel" style="display:none;">
+    <div class="mascot" id="resultsMascot">🥳</div>
+    <div class="panel-title" id="resultsTitle">🎉 Урок завершён!</div>
+    <div class="panel-sub" id="resultsSubtitle"></div>
+    <div class="results-grid">
+      <div class="result-box"><div class="val" id="resCorrect" style="color:var(--green);">0</div><div class="lbl">Правильно</div></div>
+      <div class="result-box"><div class="val" id="resTotal" style="color:var(--text);">0</div><div class="lbl">Всего</div></div>
+      <div class="result-box"><div class="val" id="resMistakes" style="color:var(--red);">0</div><div class="lbl">Ошибки</div></div>
+      <div class="result-box"><div class="val" id="resCoins" style="color:var(--gold);">0</div><div class="lbl">🪙 Монет</div></div>
+    </div>
+    <div id="difficultyBreakdown"></div>
+    <div id="mistakesReviewContainer" style="margin-top:16px;"></div>
+    <button class="btn btn-primary" id="retryLessonBtn" style="margin-top:16px;">🔄 Пройти ещё раз</button>
+    <button class="btn btn-secondary" id="backToSetupBtn">← К выбору сложности</button>
+  </div>
+</div>
+
+<div id="view-ratings" class="view">
+  <div class="panel">
+    <div class="panel-title">⭐ Оценки</div>
+    <div class="panel-sub">Оцени сленги и мемы — от 1 до 5 звёзд. За первую оценку — 1 🪙!</div>
+    <div class="ratings-modes" id="ratingsModes">
+      <button class="rating-mode-btn" data-count="10">10</button>
+      <button class="rating-mode-btn active" data-count="50">50</button>
+      <button class="rating-mode-btn" data-count="100">100</button>
+    </div>
+    <div class="year-range">
+      <label>📅 От: <select id="ratingsYearFrom"></select></label>
+      <label>До: <select id="ratingsYearTo"></select></label>
+    </div>
+    <button class="btn btn-primary" id="startRatingsBtn" style="margin-bottom:16px;">🎬 Начать оценивание</button>
+    <div id="ratingsContent"></div>
+  </div>
+</div>
+
+<div id="view-profile" class="view">
+  <div class="profile-panel">
+    <div class="profile-header">
+      <div class="avatar-edit" id="profileAvatar"><span id="avatarEmoji">😎</span><div class="edit-badge">✏️</div></div>
+      <div class="nickname-wrap">
+        <input type="text" class="nickname-input" id="nicknameInput" maxlength="10" placeholder="Твой ник" value="Игрок">
+        <div style="color:var(--muted);font-size:12px;">Учи.РУНЕТ · до 10 символов</div>
+      </div>
+    </div>
+    <button class="btn-shop" id="shopBtn">🏪 Магазин</button>
+    <div class="stats-grid">
+      <div class="stat-box"><div class="val">🪙<span id="profileCoins">0</span></div><div class="lbl">Монеты</div></div>
+      <div class="stat-box"><div class="val">🔥<span id="profileStreak">0</span></div><div class="lbl">Серия дней</div></div>
+      <div class="stat-box"><div class="val">🏆<span id="profileWins">0</span></div><div class="lbl">Побед</div></div>
+      <div class="stat-box"><div class="val">📚<span id="profileMastered">0</span></div><div class="lbl">Освоено</div></div>
+      <div class="stat-box"><div class="val">⭐<span id="profileXP">0</span></div><div class="lbl">XP</div></div>
+      <div class="stat-box"><div class="val">❤️<span id="profileLikes">0</span></div><div class="lbl">Любимых</div></div>
+      <div class="stat-box"><div class="val">🌠<span id="profileRated">0</span></div><div class="lbl">Оценено</div></div>
+    </div>
+    <div class="knowledge-bar-wrap">
+      <div class="knowledge-label"><span>📊 Знание</span><span id="profileKnowledgeVal">0 / 0</span></div>
+      <div class="knowledge-bar"><div class="knowledge-fill" id="profileKnowledgeFill"></div></div>
+    </div>
+    <div style="margin-top:28px;">
+      <div class="section-title">❤️ Любимые (<span id="favCount">0</span>)</div>
+      <div id="profileFavorites" class="grid" style="margin-top:8px;"></div>
+    </div>
+    <div style="margin-top:28px;">
+      <div class="section-title">📜 История (последние 10 · клик → детали)</div>
+      <div class="history-list" id="historyList"></div>
+    </div>
+  </div>
+</div>
+
+<footer>Учи.РУНЕТ · Учись, играй, расти</footer>
+</div>
+
+<div id="modal" style="position:fixed;inset:0;background:rgba(3,3,10,.85);backdrop-filter:blur(14px);z-index:100;display:none;align-items:center;justify-content:center;padding:20px;">
+  <div id="modalContent" style="background:linear-gradient(160deg,#12122a,#0c0c1c);border:1px solid rgba(168,85,247,.3);border-radius:24px;max-width:720px;width:100%;max-height:90vh;overflow-y:auto;padding:32px;position:relative;-webkit-overflow-scrolling:touch;"></div>
+</div>
+<div id="toast"></div>
+
+<script>
+window.addEventListener('error', function(e){ console.error('JS ERROR:', e.message); });
+
+/* ============ ЗВУКИ ============ */
+let audioCtx = null;
+function getAudioCtx(){
+  if(!audioCtx){
+    try { audioCtx = new (window.AudioContext || window.webkitAudioContext)(); } catch(e){}
+  }
+  return audioCtx;
+}
+function playWinSound(){
+  try {
+    const ctx = getAudioCtx(); if(!ctx) return;
+    if(ctx.state === 'suspended') ctx.resume();
+    const now = ctx.currentTime;
+    const notes = [523.25, 659.25, 783.99, 1046.5];
+    notes.forEach((freq, i) => {
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.connect(gain); gain.connect(ctx.destination);
+      osc.type = 'sine';
+      osc.frequency.value = freq;
+      const t = now + i * 0.08;
+      gain.gain.setValueAtTime(0, t);
+      gain.gain.linearRampToValueAtTime(0.18, t + 0.02);
+      gain.gain.exponentialRampToValueAtTime(0.001, t + 0.22);
+      osc.start(t); osc.stop(t + 0.25);
+    });
+  } catch(e){}
+}
+function playLoseSound(){
+  try {
+    const ctx = getAudioCtx(); if(!ctx) return;
+    if(ctx.state === 'suspended') ctx.resume();
+    const now = ctx.currentTime;
+    const notes = [392, 329.63, 261.63, 196];
+    notes.forEach((freq, i) => {
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.connect(gain); gain.connect(ctx.destination);
+      osc.type = 'sawtooth';
+      osc.frequency.value = freq;
+      const t = now + i * 0.12;
+      gain.gain.setValueAtTime(0, t);
+      gain.gain.linearRampToValueAtTime(0.12, t + 0.02);
+      gain.gain.exponentialRampToValueAtTime(0.001, t + 0.28);
+      osc.start(t); osc.stop(t + 0.32);
+    });
+  } catch(e){}
+}
+
+/* ============ ПОЛНАЯ БАЗА (все существующие + новые) ============ */
+const RAW = `Аффтар жжот|2001|2009|s|Похвала автору|«Аффтар жжот» — формула нулевых, похвала автору смешного поста. Сегодня почти не используется, но узнаётся.|Жжот;Угар;Пеши исчо|Аффтар жжот, пеши исчо!|15|0
+Пеши исчо|2001|2009|s|Просьба написать ещё|«Пеши исчо» — искажённое «пиши ещё». Архаизм.|Аффтар жжот;Ниасилил;Ещё|Пеши исчо, аффтар!|12|0
+ИМХО|2000|2016|s|По моему скромному мнению|«ИМХО» — от IMHO. Сокращение нулевых.|По-моему;Я считаю;Мнение|ИМХО, этот фильм переоценён.|45|0
+ХЗ|2000|2026|s|Не знаю|«ХЗ» — «хрен знает». Живое сокращение.|Не знаю;Без понятия;Неизвестно|ХЗ, когда он вернётся.|86|0
+ЛОЛ|2002|2026|s|Смешно|«ЛОЛ» — от LOL.|Смешно;Ору;Кек|Лол, ты это серьёзно?|72|0
+Нуб|2002|2026|s|Новичок в игре|«Нуб» — от newbie.|Новичок;Ламер;Неопытный|Не бери его в команду, он нуб.|70|0
+Ку|2001|2012|s|Приветствие|«Ку» — неформальное приветствие нулевых.|Привет;Хай;Йоу|Ку, как дела?|25|0
+Ап|2001|2012|s|Поднять тему|«Ап» — поднять тему на форуме.|Поднять;Апнуть;АПВ|Ап, тема ещё актуальна!|15|0
+Ботяра|2003|2010|s|Толстый тролль|«Ботяра» — наглый тролль.|Тролль;Жирный;Хам|Этот ботяра опять флудит.|10|0
+Плакалъ|2003|2010|s|Смеялся до слёз|«Плакалъ» — «смеялся до слёз».|Ржунимагу;Ору;Смешно|Плакалъ с этого поста!|10|0
+Стопицот|2003|2014|s|Очень много|«Стопицот» — шутливое «очень много».|Много;Куча;Миллион|У меня стопицот дел на сегодня.|20|0
+Ниасилил|2004|2012|s|Не осилил|«Ниасилил» — не смог прочитать.|Не осилил;Много букав;Слишком длинно|Ниасилил эту стену текста.|15|0
+Ржунимагу|2003|2012|s|Очень смешно|«Ржунимагу» — «ржу, не могу».|Ору;Плакалъ;Смешно|Ржунимагу с этого мема!|15|0
+Зачот|2001|2014|s|Одобрение|«Зачот» — «молодец».|Круто;Молодец;Плюс|Зачот, так держать!|20|0
+Гуглить|2003|2026|s|Искать в интернете|«Гуглить» — искать в Google.|Искать;Яндексить;Сёрчить|Погугли, там всё есть.|88|0
+Копипаста|2002|2020|s|Скопированный текст|«Копипаста» — copy-paste.|Копия;Вставка;Репост|Опять копипаста в комментариях.|35|0
+Фотошоп|2003|2018|s|Отредактировать фото|«Фотошоп» — от Adobe Photoshop.|Обработать;Редачить;Фотомонтаж|Это фотошоп, не верь глазам.|60|0
+Ктулху|2003|2014|m|Божество Лавкрафта|«Ктулху» — культовый мем нулевых.|Ктулху;Фхтагн;Спрут|Ктулху проснулся — все в панике.|20|0
+Ктулху фхтагн|2007|2016|m|Фраза-мем|«Ктулху фхтагн» — ритуальная фраза.|Фхтагн;Ктулху;Пробуждение|Ктулху фхтагн! — написали на стене.|12|0
+Ня|2004|2018|s|Выражение умиления|«Ня» — из аниме-культуры.|Мимими;Няшно;Умиление|Ня, какой котик!|15|0
+Кавай|2004|2018|s|Милый, няшный|«Кавай» — от kawaii.|Милый;Няшный;Прелесть|Кавай! Дай потрогать!|20|0
+Превед|2006|2012|m|Мем с медведем|«Превед» — легендарный мем 2006.|Привет;Медвед;Ку|Превед, медвед!|12|0
+Превед, медвед!|2006|2012|m|Мем с медведем|Полная версия мема 2006.|Превед;Медвед;Ку|Превед, медвед! — крикнул он.|12|0
+Медвед|2006|2012|m|Герой мема|«Медвед» — персонаж мема.|Превед;Мишка;Косолапый|Медвед одобряет.|8|0
+Йа|2005|2012|s|«Я» по-падонковски|«Йа» — искажённое «я».|Я;Аз;Йа|Йа креведко!|5|0
+Йопт|2004|2014|s|Восклицание|«Йопт» — эвфемизм.|Блин;Ох;Ёлки|Йопт, опять забыл!|25|0
+Котэ|2007|2016|m|Кот, котик|«Котэ» — мем про кота.|Котик;Кот;Мурлыка|Котэ пришёл и лёг на клавиатуру.|20|0
+Няшный|2007|2020|s|Очень милый|«Няшный» — милый.|Милый;Кавай;Няшка|Такой няшный котёнок!|15|0
+Школота|2006|2026|s|Подростки|«Школота» — иронично о подростках.|Подростки;Дети;Мелкие|Школота захватила комменты.|55|0
+Гламур|2006|2016|s|Показная роскошь|«Гламур» — от glamour.|Пафос;Блеск;Лакшери|Слишком много гламура.|20|0
+Хомячок|2007|2014|s|Наивный юзер|«Хомячок» — наивный пользователь.|Наивный;Простак;Лох|Он хомячок, поверил всему.|15|0
+Бугага|2005|2014|s|Злой смех|«Бугага» — злорадный смех.|Бугага;Смех;Ха-ха|Бугага, так тебе и надо!|10|0
+Тлен|2007|2016|s|Уныние|«Тлен» — тоска.|Тоска;Уныние;Депрессия|На меня напал тлен.|15|0
+Тян|2009|2026|s|Девушка|«Тян» — из аниме-культуры.|Девушка;Барышня;Она|Познакомился с тян.|45|0
+Кун|2007|2022|s|Парень|«Кун» — парная к «тян».|Парень;Молодой человек;Он|Этот кун в очках — программист.|25|0
+Няша|2007|2020|s|Милая девушка|«Няша» — милая девушка.|Милашка;Няшка;Кавай|Она такая няша!|20|0
+ВКонтакте|2006|2026|s|Соцсеть|«ВКонтакте» — соцсеть.|ВК;Вконтакте;Вконтакт|Сижу во ВКонтакте весь день.|85|0
+Одноклассники|2006|2026|s|Соцсеть|«Одноклассники» — соцсеть.|ОК;Одноклашка;Одноклассники|Мама опять в Одноклассниках.|55|0
+Нид хелп|2008|2018|s|Нужна помощь|«Нид хелп» — need help.|Помогите;Помощь;Хелп|Нид хелп, кто шарит?|20|0
+Демотиватор|2008|2014|m|Мем с чёрной рамкой|«Демотиватор» — мем 2008-2014.|Демотиватор;Мем;Картинка|Демотиватор про работу|20|0
+ОМГ|2010|2026|s|Ого!|«ОМГ» — OMG.|Ого;Боже;Вау|ОМГ, ты видел это?|65|0
+WTF|2010|2026|s|Что за фигня|«WTF» — What The F.|Что за;Как так;Недоумение|WTF, что это было?|70|0
+Facepalm|2010|2022|m|Рука-лицо|«Facepalm» — рука-лицо.|Рука-лицо;Фейспалм;Стыд|Фейспалм, не могу смотреть.|35|0
+Тролль|2010|2026|s|Провокатор|«Тролль» — интернет-провокатор.|Провокатор;Хейтер;Троллить|Не корми тролля.|65|0
+Троллинг|2011|2026|s|Провокация|«Троллинг» — провокация в сети.|Провокация;Издёвка;Хейт|Хватит троллинга.|55|0
+Хейтер|2012|2026|s|Недоброжелатель|«Хейтер» — hater.|Критик;Ненавистник;Хейт|Не читай хейтеров.|70|0
+Лайк|2011|2026|u|Отметка «нравится»|«Лайк» — like.|Сердечко;Плюс;Одобрение|Поставь лайк!|94|0
+Репост|2011|2026|u|Поделиться|«Репост» — re-post.|Поделиться;Шер;Скопировать|Сделай репост.|86|0
+Твитнуть|2010|2022|s|Написать в Twitter|«Твитнуть» — про Twitter.|Затвитить;Написать;Пост|Твитни об этом.|15|0
+Селфи|2013|2026|u|Фотография себя|«Селфи» — selfie.|Сэлфи;Автопортрет;Фото себя|Сделай селфи.|70|0
+Хэштег|2012|2026|u|Метка для поиска|«Хэштег» — hashtag.|Тег;Метка;Решётка|Поставь хэштег.|65|0
+Плюс|2012|2026|u|Согласие|«Плюс» — согласие в чате.|Согласен;Верно;Да|Плюс, я тоже так думаю.|82|0
+Минус|2012|2026|u|Несогласие|«Минус» — несогласие.|Нет;Не согласен;Против|Минус, плохая идея.|78|0
+Шеймить|2014|2026|s|Публично стыдить|«Шеймить» — to shame.|Стыдить;Осуждать;Шейминг|Не шейми его.|55|0
+Жиза|2014|2026|s|Жизненная ситуация|«Жиза» — «жизненно».|Узнаваемо;Бывает;Точно|Это же жиза про понедельник!|92|0
+Кек|2012|2026|s|Смешок|«Кек» — смешок.|Смешок;Лол;Ирония|Кек, он опять проиграл.|65|0
+Пранк|2010|2026|s|Розыгрыш|«Пранк» — prank.|Розыгрыш;Шутка;Прикол|Он снял пранк над другом.|60|0
+Сквиш|2014|2022|s|Игрушка-антистресс|«Сквиш» — squish.|Антистресс;Игрушка;Мялка|Купил сквиш.|25|0
+Краш|2014|2026|s|Объект симпатии|«Краш» — crush.|Симпатия;Влюблённость;Воздыхание|У меня новый краш на парах.|84|0
+Юзать|2010|2026|s|Использовать|«Юзать» — to use.|Пользовать;Применять;Использовать|Я юзаю это приложение.|55|0
+Ватник|2014|2022|s|Политический ярлык|«Ватник» — политический ярлык.|Ярлык;Политика;Спор|Политические споры превратились в ярлыки.|25|0
+Рашка|2014|2022|s|Ироничное название страны|«Рашка» — политический ярлык.|Страна;Родина;Ирония|Ироничное словечко.|20|0
+Вайб|2016|2026|s|Атмосфера|«Вайб» — vibe.|Атмосфера;Настроение;Энергия|У этой песни космический вайб.|94|0
+Хайп|2015|2026|s|Ажиотаж|«Хайп» — hype.|Шумиха;Ажиотаж;Внимание|Вокруг игры поднялся хайп.|86|0
+Кежуал|2015|2024|s|Повседневный|«Кежуал» — casual.|Обычный;Простой;Casual|Сегодня кежуал пятница.|55|0
+Кринж|2016|2026|s|Чувство неловкости|«Кринж» — cringe.|Стыдоба;Неловко;Позор|Его танцы — сплошной кринж.|96|0
+Аура|2018|2026|s|Впечатление|«Аура» — «очки ауры».|Крутость;Энергия;Вайб|Он потерял очки ауры.|65|0
+Буллинг|2016|2026|s|Травля|«Буллинг» — bullying.|Травля;Давление;Унижение|Буллинг — это серьёзно.|65|0
+Флекс|2016|2026|s|Хвастовство|«Флекс» — flex.|Хвастовство;Выпендрёж;Кич|Хватит флексить кроссовками.|60|0
+Скам|2017|2026|s|Мошенничество|«Скам» — scam.|Развод;Обман;Фейк|Не переходи, это скам!|70|0
+Сториз|2016|2026|s|Истории в соцсетях|«Сториз» — stories.|Истории;Моменты;Сторис|Выложи сторис!|70|0
+Инста|2015|2026|s|Instagram|«Инста» — Instagram.|Инстаграм;ИГ;Инстаграмм|Посты в инсте.|65|0
+Твич|2016|2026|s|Twitch|«Твич» — Twitch.|Твитч;Стрим;Платформа|Смотрю стрим на Твиче.|55|0
+Донат|2015|2026|s|Пожертвование|«Донат» — donate.|Донейт;Донатить;Поддержка|Скинул донат стримеру.|60|0
+Стрим|2015|2026|s|Прямая трансляция|«Стрим» — stream.|Трансляция;Эфир;Лайв|Сегодня вечером стрим.|70|0
+Рейдж|2015|2024|s|Ярость в играх|«Рейдж» — rage.|Ярость;Бешенство;Тильт|У него рейдж после проигрыша.|45|0
+Банить|2017|2026|s|Блокировать|«Банить» — to ban.|Блок;Мут;Запрет|Его забанили за спам.|65|0
+Стримснайп|2018|2026|s|Подглядывание в стриме|«Стримснайп» — stream sniping.|Подглядывание;Стрим;Читерство|Его стримснайпнули.|35|0
+Лойс|2018|2026|s|Лайк|«Лойс» — шутливое «лайк».|Лайк;Сердечко;Плюс|Поставь лойс.|30|0
+Чиллить|2017|2026|s|Отдыхать|«Чиллить» — to chill.|Отдыхать;Релаксить;Вайбить|Мы чиллим на диване.|60|0
+Ору|2016|2026|s|Очень смешно|«Ору» — громко смеюсь.|Смешно;Лол;Ржу|Ору с этого видео!|88|0
+Ауф|2019|2026|s|Восторг|«Ауф» — восторг.|Ого;Круто;Огонь|Ауф, какая тачка!|45|0
+Амогус|2019|2026|m|Мем из Among Us|«Амогус» — мем 2020.|Подозрительный;Предатель;Импостер|Он какой-то амогус.|25|0
+Летсгоу|2019|2026|s|Погнали!|«Летсгоу» — let's go.|Погнали;Вперёд;Го|Летсгоу, мы выиграли!|55|0
+Изи|2018|2026|s|Легко|«Изи» — easy.|Легко;Просто;Проще простого|Изи катка!|86|0
+Катка|2017|2026|s|Игровой матч|«Катка» — партия.|Матч;Партия;Раунд|Сыграем ещё катку?|60|0
+Рофл|2016|2026|s|Шутка|«Рофл» — ROFL.|Шутка;Прикол;Смех|Рофл, ты серьёзно?|55|0
+Имба|2017|2026|s|Слишком сильный|«Имба» — имбалансный.|Огонь;Пушка;Топ|Этот герой — имба.|55|0
+База|2019|2026|s|Верное высказывание|«База» — base.|Правда;Истина;Точно|Ты сказал чистую базу.|90|0
+Топчик|2018|2026|s|Лучшее|«Топчик» — «топ».|Топ;Огонь;Лучшее|Фильм — топчик!|60|0
+Пушка|2018|2026|s|Очень круто|«Пушка» — мощное.|Огонь;Бомба;Топ|Этот трек — пушка!|60|0
+Мемчик|2017|2026|s|Мем|«Мемчик» — мем ласково.|Мем;Мемас;Шутка|Кидай мемчик!|50|0
+Го|2017|2026|s|Погнали|«Го» — go.|Погнали;Вперёд;Давай|Го в игру!|86|0
+Челлендж|2017|2026|s|Вызов|«Челлендж» — challenge.|Испытание;Вызов;Флешмоб|Прими челлендж!|55|0
+Лайфхак|2015|2026|s|Полезный совет|«Лайфхак» — life hack.|Совет;Хитрость;Секрет|Лайфхак: положи телефон в стакан.|60|0
+Токсик|2018|2026|s|Токсичный человек|«Токсик» — toxic.|Ядовитый;Негативный;Вредный|Не играй с этим токсиком.|60|0
+Мид|2019|2026|s|Посредственно|«Мид» — mid.|Средне;Никак;Посредственно|Новый сезон — полный мид.|50|0
+Реал|2018|2026|s|Согласие|«Реал» — real.|Согласен;Правда;Точно|— Это было жёстко. — Реал.|55|0
+Лмао|2018|2026|s|Сильный смех|«Лмао» — LMAO.|Лол;Смешно;Ору|Лмао, не могу.|45|0
+Форсить|2019|2026|s|Навязывать|«Форсить» — force.|Навязывать;Продвигать;Толкать|Не форси эту тему.|40|0
+Читер|2016|2026|s|Игрок с читами|«Читер» — cheat.|Жулик;Обманщик;Хакер|Админ, тут читер!|45|0
+Скилл|2017|2026|s|Навык|«Скилл» — skill.|Навык;Умение;Мастерство|У него прокачан скилл.|50|0
+Тащер|2018|2026|s|Игрок, вытягивающий команду|«Тащер» — тот, кто «тащит».|Керри;Лидер;Герой|Он настоящий тащер.|40|0
+Слэй|2019|2026|s|Выглядеть потрясающе|«Слэй» — slay.|Огонь;Пушка;Топ|Ты слэй в этом образе!|75|0
+Гигачад|2020|2026|m|Мем про мускулистого мужчину|«Гигачад» — мем.|Чадик;Чед;Сигма|Он поднял 200 кг — гигачад.|70|0
+Слэй-квин|2020|2026|s|Королева стиля|«Слэй-квин» — королева.|Королева;Богиня;Икона|Она на вечеринке слэй-квин.|40|0
+Чилл|2020|2026|s|Спокойный отдых|«Чилл» — chill.|Релакс;Отдых;Вайб|Сегодня просто чилл.|70|0
+Ауф-ауф|2020|2026|s|Усиленное «ауф»|«Ауф-ауф» — усиленный ауф.|Ауф;Ого;Круто|Ауф-ауф, что за машина!|20|0
+Локдаун|2020|2024|s|Карантин|«Локдаун» — lockdown.|Карантин;Изоляция;Самоизоляция|Во время локдауна все дома.|50|0
+Крашиха|2020|2026|s|Девушка-краш|«Крашиха» — девушка-краш.|Краш;Симпатия;Воздыхание|Его крашиха из параллельного.|40|0
+Крашик|2020|2026|s|Ласково о краше|«Крашик» — краш ласково.|Краш;Симпатия;Любимка|Мой крашик улыбнулся!|40|0
+Нормис|2020|2026|s|Обыватель|«Нормис» — normal.|Обыватель;Серость;Без изюминки|Он нормис.|40|0
+Реал ток|2020|2026|s|Реально так|«Реал ток» — real talk.|Реал;Правда;Верно|Реал ток, так и есть.|35|0
+Изи-изи|2020|2026|s|Легко-легко|«Изи-изи» — усиленное «изи».|Изи;Легко;Просто|Изи-изи, справимся.|35|0
+Тейк|2021|2026|s|Мнение|«Тейк» — take.|Мнение;Взгляд;Позиция|Мой тейк: это фиаско|70|0
+Хот-тейк|2021|2026|s|Провокационное мнение|«Хот-тейк» — hot take.|Мнение;Тейк;Провокация|Мой хот-тейк: фильм переоценён|60|0
+Мейн-карактер|2022|2026|m|Главный герой|«Мейн-карактер» — main character.|Главный герой;Звезда;Центр|Он в своём мейн-карактер режиме.|55|0
+Газлайтинг|2022|2026|s|Манипуляция|«Газлайтинг» — gaslighting.|Манипуляция;Обман;Давление|Это газлайтинг, не верь.|70|0
+Сигма|2022|2026|s|Самодостаточный мужчина|«Сигма» — мем.|Одиночка;Волк;Самодостаточный|Он не тусуется — сигма.|60|0
+Альтушка|2022|2026|s|Девушка альт-субкультуры|«Альтушка» — альтернативка.|Нефорка;Альтернативка;Неформалка|Она выглядит как альтушка.|55|0
+Тюбик|2022|2026|s|Стиляга-перестарок|«Тюбик» — иронично о парне.|Стиляга;Франт;Модник|Этот тюбик в очках без стёкол.|40|0
+Бро|2022|2026|s|Дружеское обращение|«Бро» — brother.|Братан;Друг;Кореш|Бро, ты где пропал?|94|0
+Дед инсайд|2022|2026|m|Мрачный человек|«Дед инсайд» — dead inside.|Меланхолик;Мрачный;Отстранённый|Он выглядит как дед инсайд.|50|0
+Биф|2022|2026|s|Конфликт|«Биф» — beef.|Вражда;Конфликт;Ссора|У них давний биф.|50|0
+Камбэк|2022|2026|s|Возвращение|«Камбэк» — comeback.|Возвращение;Отыгрыш;Восстановление|Он сделал камбэк.|50|0
+Мьюинг|2022|2026|s|Тренировка челюсти|«Мьюинг» — mewing.|Тренировка;Челюсть;Прикус|Он весь день мьюит.|45|0
+Пикми|2022|2026|m|«Выбери меня»|«Пикми» — pick me.|«Не как все»;Угодница;Подлизывающаяся|Она ведёт себя как пикми.|40|0
+НПС|2022|2026|m|Шаблонный человек|«НПС» — NPC.|Шаблонный;Безынициативный;Робот|Он как НПС.|55|0
+Душнила|2022|2026|s|Зануда|«Душнила» — зануда.|Зануда;Нудный;Бумер|Не будь душнилой.|55|0
+Абьюзер|2022|2026|s|Тот, кто причиняет насилие|«Абьюзер» — abuser.|Тиран;Манипулятор;Насильник|Он абьюзер.|65|0
+Вписка|2022|2026|s|Вечеринка|«Вписка» — тусовка.|Тусовка;Вечеринка;Пати|Сегодня вписка у Макса.|50|0
+Зумер|2022|2026|s|Поколение Z|«Зумер» — zoomer.|Поколение Z;Молодёжь;Тинейджеры|Зумеры не понимают жизнь без интернета.|65|0
+Мемас|2022|2026|s|Мем|«Мемас» — мем.|Мем;Мемчик;Шутка|Кидай мемас.|40|0
+Мёрч|2022|2026|s|Атрибутика|«Мёрч» — merchandise.|Атрибутика;Товары;Фан-мерч|Купил мёрч группы.|50|0
+Слэмиться|2022|2026|s|Толкаться на концерте|«Слэмиться» — to slam.|Толкаться;Прыгать;Активничать|На концерте все слэмились.|30|0
+Стримить|2022|2026|s|Вести трансляцию|«Стримить» — to stream.|Транслировать;Вести эфир;Вещать|Он стримит каждый вечер.|50|0
+Ава|2022|2026|s|Аватар|«Ава» — аватарка.|Аватар;Фото профиля;Картинка|Поставь нормальную аву.|50|0
+Булли|2022|2026|s|Агрессор|«Булли» — bully.|Агрессор;Хулиган;Тиран|Он булли.|40|0
+Вайбить|2022|2026|s|Кайфовать|«Вайбить» — от «вайб».|Кайфовать;Чиллить;Релаксить|Мы просто вайбим.|55|0
+Гоустить|2022|2026|s|Пропадать|«Гоустить» — to ghost.|Исчезать;Пропадать;Молчать|Он гоустил после свидания.|40|0
+Мимими|2022|2026|s|Умиление|«Мимими» — умиление.|Умиление;Милота;Няшка|Мимими, какой котёнок!|40|0
+Печалька|2022|2026|s|Лёгкое огорчение|«Печалька» — огорчение.|Грусть;Досада;Огорчение|Печалька, что ты не придёшь.|35|0
+Респект|2022|2026|s|Уважение|«Респект» — respect.|Уважение;Признание;Почёт|Респект тебе!|50|0
+Квадроберы|2022|2026|s|Субкультура|«Квадроберы» — субкультура.|Квадробика;Зверушки;Териантропы|Квадроберы собираются в парке.|50|0
+Про|2022|2026|s|Профессионал|«Про» — pro.|Профессионал;Мастер;Эксперт|Он про, играет как бог.|40|0
+Скуф|2023|2026|m|Запущенный мужчина|«Скуф» — мем 2023.|Запущенный;Скучный;Обыватель|Он превратился в скуфа.|75|0
+Брейнрот|2023|2026|m|Абсурдный контент|«Брейнрот» — brain rot.|Абсурд;Треш;Слоп|Я два часа смотрел брейнрот.|65|0
+Скибиди|2023|2026|m|Мем про головы в унитазах|«Скибиди» — Skibidi Toilet.|Брейнрот;Абсурд;Треш|Скибиди доп доп доп.|55|0
+Делулу|2023|2026|s|Оторванный от реальности|«Делулу» — delusional.|Иллюзия;Оторванный;Фантазёр|Ты делулу, если так думаешь.|50|0
+Барбикор|2023|2026|s|Розовый стиль|«Барбикор» — barbiecore.|Розовый стиль;Кукольный;Барби-эстетика|Весь её лук — барбикор.|40|0
+Ред-флаг|2023|2026|s|Тревожный признак|«Ред-флаг» — red flag.|Тревожный сигнал;Знак проблемы;Подозрение|Это ред-флаг.|55|0
+Грин-флаг|2023|2026|s|Хороший признак|«Грин-флаг» — green flag.|Хороший знак;Позитив;Плюс|Это грин-флаг.|50|0
+Слоп|2023|2026|s|Низкокачественный контент|«Слоп» — slop.|Мусор;Треш;Брейнрот|Этот слоп читать неприятно.|40|0
+Вайб-кодинг|2023|2026|s|Программирование по интуиции|«Вайб-кодинг» — vibe coding.|Интуитивный код;Хак;Наитие|Он занимается вайб-кодингом.|35|0
+Ризз|2023|2026|s|Харизма|«Ризз» — rizz.|Харизма;Обаяние;Шарм|У него невероятный ризз.|55|0
+Бинджвотчинг|2023|2026|s|Запойный просмотр|«Бинджвотчинг» — binge-watching.|Марафон;Запойный просмотр;Сериал-марафон|Устроил бинджвотчинг.|45|0
+Сикс-севен|2023|2026|m|Фраза «6-7»|«Сикс-севен» — фраза поколения альфа.|6-7;Абсурд;Брейнрот|Он опять говорит «6-7».|35|0
+Абобус|2023|2026|m|Раздолбай|«Абобус» — мем.|Раздолбай;Легкомысленный;Пофигист|Этот абобус всё забыл.|35|0
+Чадик|2023|2026|s|Крутой парень|«Чадик» — от «чад».|Чед;Мачо;Красавчик|Ну ты чадик, конечно!|40|0
+Мейн-кун|2023|2026|s|«Главный кот»|«Мейн-кун» — иронично о парне.|Главный кот;Уверенный;Крупный|Он настоящий мейн-кун.|35|0
+Дноклы|2023|2026|s|Одноклассники|«Дноклы» — одноклассники.|Одноклассники;Класс;Школьники|Я с дноклами не общаюсь.|35|0
+Ачивка|2023|2026|s|Достижение|«Ачивка» — achievement.|Достижение;Победа;Трофей|Сходил в зал — ачивка.|50|0
+Баттл|2023|2026|s|Соревнование|«Баттл» — battle.|Дуэль;Соревнование;Битва|У них был баттл.|45|0
+Скуфандр|2024|2026|m|Усиленное «скуф»|«Скуфандр» — усиленное «скуф».|Скуф;Скуфидон;Запущенный|Этот скуфандр недоволен.|50|1
+Скуфидон|2024|2026|m|Вариация «скуфа»|«Скуфидон» — вариация «скуфа».|Скуф;Скуфандр;Застойный|Настоящий скуфидон.|40|1
+Нишевый|2024|2026|s|Редкий|«Нишевый» — niche.|Редкий;Специфический;Необычный|У него нишевые увлечения.|45|1
+Промпт|2024|2026|s|Запрос к нейросети|«Промпт» — prompt.|Запрос;Команда;Инструкция|Напиши хороший промпт.|70|1
+Дипфейк|2024|2026|s|ИИ-подделка|«Дипфейк» — deepfake.|Подделка;Фейк;ИИ-фальшивка|Это дипфейк, не верь.|65|1
+Думскроллинг|2024|2026|s|Прокрутка плохих новостей|«Думскроллинг» — doomscrolling.|Прокрутка;Новостная зависимость;Тревожный скролл|Хватит думскроллить.|50|1
+Чед|2024|2026|m|Крутой парень|«Чед» — chad.|Гигачад;Мачо;Альфа|Он реально чед.|55|1
+Сигма-бой|2024|2026|m|Независимый парень|«Сигма-бой» — мем.|Сигма;Одиночка;Волк|Он в сигма-бой режиме.|45|1
+Лук|2024|2026|s|Образ, наряд|«Лук» — look.|Образ;Аутфит;Стиль|Твой лук просто огонь.|55|1
+Аутфит|2024|2026|s|Комплект одежды|«Аутфит» — outfit.|Лук;Наряд;Комплект|Покажи свой аутфит.|50|1
+Скибиди-туалет|2024|2026|m|Мем про головы в унитазах|«Скибиди-туалет» — Skibidi Toilet.|Скибиди;Брейнрот;Абсурд|Мой брат фанатеет от скибиди-туалета.|50|1
+Глаутинг|2024|2026|s|Показное хвастовство|«Глаутинг» — to gloat.|Хвастовство;Флекс;Превосходство|Хватит глаутить.|40|1
+Оякодон|2024|2026|m|Абсурдное слово|«Оякодон» — абсурдный мем.|Абсурд;Словечко;Мем|Оякодон, что происходит?|20|1
+Скиби|2024|2026|s|Слово-паразит|«Скиби» — сокращение.|Скибиди;Брейнрот;Словечко|Скиби, бро, как дела?|30|1
+Фармить ауру|2024|2026|s|Работать над образом|«Фармить ауру» — мем.|Прокачивать образ;Работать над стилем;Флексить|Он весь день фармит ауру.|45|1
+Апрувнуть|2024|2026|s|Одобрить|«Апрувнуть» — to approve.|Одобрить;Согласовать;Разрешить|Шеф не апрувнул идею.|45|1
+Бэстис|2024|2026|s|Лучшие друзья|«Бэстис» — besties.|Лучшие друзья;Близкие;Друзья|Мы с ней бэстис.|50|1
+Нефор|2024|2026|s|Неформал|«Нефор» — неформал.|Альтернативщик;Неформал;Альтушка|Он нефор.|40|1
+Офник|2024|2026|s|Агрессивный человек|«Офник» — сленг.|Агрессор;Гопник;Драчун|Этот офник полез в драку.|15|1
+Соулмейт|2024|2026|s|Родственная душа|«Соулмейт» — soulmate.|Родственная душа;Близкий;Бэсти|Она мой соулмейт.|50|1
+ЛД|2024|2026|s|Лучший друг|«ЛД» — лучший друг.|Лучший друг;Бэсти;Близкий|Он мой ЛД.|40|1
+Элпэшка|2024|2026|s|Лучшая подруга|«Элпэшка» — ЛП.|Лучшая подруга;Бэсти;ЛП|Мы с элпэшкой гуляли.|35|1
+Бумер|2024|2026|s|Старшее поколение|«Бумер» — boomer.|Старик;Дед;Старшее поколение|Окей, бумер, не ворчи.|60|1
+Гик|2024|2026|s|Увлечённый человек|«Гик» — geek.|Увлечённый;Эксперт;Фанат|Он гик, знает всё про гаджеты.|45|1
+Движ|2024|2026|s|Тусовка|«Движ» — движ.|Тусовка;Активность;Событие|В городе сегодня движ.|50|1
+Камон|2024|2026|s|«Да ладно»|«Камон» — come on.|Давай;Ну же;Серьёзно|Камон, ты серьёзно?|40|1
+Криповый|2024|2026|s|Жуткий|«Криповый» — creepy.|Жуткий;Страшный;Мерзкий|Этот видос криповый.|45|1
+Микрик|2024|2026|s|Микрофон|«Микрик» — микрофон.|Микрофон;Мих;Звук|У него плохой микрик.|25|1
+Падик|2024|2026|s|Подъезд|«Падик» — подъезд.|Подъезд;Парадная;Вход|Встретимся в падике.|30|1
+Паль|2024|2026|s|Подделка|«Паль» — палёнка.|Подделка;Фейк;Копия|Это паль, не покупай.|40|1
+Селебы|2024|2026|s|Знаменитости|«Селебы» — celebrities.|Звёзды;Знаменитости;Иконы|Селебы выложили фото.|40|1
+Хейтить|2024|2026|s|Писать злые комменты|«Хейтить» — to hate.|Ненавидеть;Критиковать;Оскорблять|Не хейти, помоги.|45|1
+Чекать|2024|2026|s|Проверять|«Чекать» — to check.|Проверять;Смотреть;Глянуть|Чекай новый трек.|45|1
+ЧСВ|2024|2026|s|Высокомерие|«ЧСВ» — чувство собственной важности.|Высокомерие;Самовлюблённость;Эго|У него ЧСВ зашкаливает.|45|1
+Юзлес|2024|2026|s|Бесполезный|«Юзлес» — useless.|Бесполезный;Ненужный;Пустой|Этот совет юзлес.|30|1
+Дропнуть|2024|2026|s|Опубликовать|«Дропнуть» — to drop.|Выложить;Опубликовать;Запостить|Дропни новый пост.|45|1
+Забайтить|2024|2026|s|Спровоцировать|«Забайтить» — bait.|Спровоцировать;Вынудить;Подколоть|Он забайтил меня на спор.|40|1
+Хомяк|2024|2026|m|Hamster Kombat|«Хомяк» — мем про кликеры.|Хомяк;Кликер;Hamster|Тапаю хомяка весь день.|60|1
+Банворд|2020|2026|s|Слово-запрет|«Банворд» — слово, за которое банят.|Запрет;Бан;Слово|Не пиши банворд.|40|1
+Трабл|2020|2026|s|Проблема|«Трабл» — trouble.|Проблема;Неприятность;Засада|У меня трабл с учёбой.|50|1
+Я хочу вкусно и точка|2026|2026|m|Мем про Кларка из Backrooms|Фраза «Я хочу вкусно и точка, понимаете?» — мем, созданный блогером-пародистом.|Вкусно;Точка;Кларк;Архитектор|— Что будешь? — Я хочу вкусно и точка, понимаете?|90|1
+Я архитектор блин|2026|2026|m|Крик Кларка (пародия)|«Я архитектор, блин!» — фраза из пародийного переозвучивания.|Архитектор;Кларк;Backrooms|Я архитектор блин! А продаю мебель!|85|1
+Да ты шуешь|2026|2026|m|Ошибка нейросети|«Да ты шуешь» — мем марта 2026. Нейросеть исказила фразу Розы Барбоскиной.|Шутишь;Барбоскины;ИИ|Да ты шуешь?! — сказала Роза.|92|1
+Тильт|2020|2026|s|Состояние злости|«Тильт» — эмоциональное состояние потери контроля.|Злость;Ярость;Потеря контроля|Я в тильте после этой катки.|85|1
+Я уже двести|2026|2026|s|Сильная усталость|«Я уже двести / 200» — состояние крайней усталости.|Устал;Вымотан;Плохо|Я уже двести после этой недели.|80|1
+Лям двести|2026|2026|s|Усиленная усталость|«Лям двести» — усиленный вариант «я уже двести».|Вымотан;Истощён;Устал|Лям двести, братан, я спать.|75|1
+21|2026|2026|m|Локальный мем разработчика|«21» / «Твенти-оан» — локальный мем 21 февраля 2026.|Твенти-оан;День рождения;Локальный|21 февраля — день мема «21».|70|1
+Твенти-оан|2026|2026|m|Локальный мем разработчика|«Твенти-оан» — то же, что мем «21».|21;День рождения;Локальный|Твенти-оан — это про 21 февраля.|65|1
+Воздухан|2026|2026|m|Пустослов|«Воздухан» — мем и сленг 2026 года.|Пустослов;Болтун;Обещания|Этот воздухан опять ничего не сделал.|82|1
+Черемша|2026|2026|m|ИИ-мем про СССР|«Черемша» — гибрид кролика и льва из ИИ-роликов.|Абсурд;СССР;ИИ|Черемша в каждой хрущёвке.|78|1
+Бурмалда|2026|2026|m|Слово-заменитель|«Бурмалда» — популярный мем весны 2026.|Обход;Лазейка;Мем|Он опять про бурмалду.|75|1
+Котость|2026|2026|m|Кот Куки|«Котость» — кот Куки. Мем появился в январе 2026.|Кот;Куки;Мем|Котость пришёл!|70|1
+Охайо|2022|2026|m|Странное или абсурдное|«Охайо» (от англ. Ohio) — мем, означающий что-то странное или абсурдное. Также искажённое японское «Охаё».|Странный;Нелепый;Абсурд|Это просто охайо какое-то.|80|1
+Босс КФС|2024|2026|s|Насмешливое прозвище полного человека|«Босс КФС» — насмешливое прозвище.|Толстяк;Обжора;Насмешка|Его в школе называют босс КФС.|70|1
+Сигма-свинка|2026|2026|m|Персонаж мемов|«Сигма-свинка» — персонаж из мемов про Roblox и «Sigma Boy».|Свинка;Сигма;Roblox|Сигма-свинка и сигма-крипер идут по полю.|60|1
+Там какая-то тактика должна быть|2016|2026|m|Фраза-мем|«Там какая-то тактика должна быть...» — мем из интервью наездника (2015). Популярен с 2016.|Тактика;План;Непонимание|— Как мы это сделаем? — Там какая-то тактика должна быть...|85|1
+Разраб|2020|2026|s|Разработчик|«Разраб» — сокращение от «разработчик».|Разработчик;Создатель;Дев|Разрабы опять сломали игру.|70|1
+Терпила|2020|2026|s|Слабый человек, жертва|«Терпила» — пренебрежительное название слабого человека.|Жертва;Слабак;Потерпевший|Он терпила, всё стерпит.|65|1
+Кайф|2000|2026|s|Удовольствие, наслаждение|«Кайф» — состояние удовольствия.|Удовольствие;Наслаждение;Приятно|От этой музыки просто кайф!|85|1
+Ржака|2000|2026|s|Что-то очень смешное|«Ржака» — нечто очень смешное.|Смех;Угар;Прикол|Это была такая ржака!|75|1
+W|2020|2026|s|Победа, круто|«W» — от англ. win (победа).|Победа;Круто;Красава|Этот трек — просто W!|80|1
+L|2020|2026|s|Поражение, плохо|«L» — от англ. lose (проигрыш).|Плохо;Позор;Неудача|Он взял L в этой катке.|80|1
+Спс|2000|2026|s|Спасибо|«Спс» — сокращение от «спасибо».|Спасибо;Благодарю;Пасиба|Спс за помощь!|90|1
+Пр|2000|2026|s|Привет|«Пр» — сокращение от «привет».|Привет;Ку;Хай|Пр, как дела?|85|1
+Кд?|2000|2026|s|Как дела?|«Кд?» — сокращение от «как дела?».|Как дела;Как ты;Что нового|Кд? Давно не виделись.|80|1
+Пок|2000|2026|s|Пока|«Пок» — сокращение от «пока».|Пока;До встречи;Бай|Пок, увидимся завтра!|85|1
+Сябки|2000|2026|s|Спасибо|«Сябки» — шутливое «спасибо».|Спасибо;Благодарю;Пасиба|Сябки, ты лучший!|75|1
+Пасиба|2000|2026|s|Спасибо|«Пасиба» — искажённое «спасибо».|Спасибо;Спс;Сябки|Пасиба за совет.|80|1
+Солнечный|2020|2026|s|Тупой, наивный|«Солнечный» — эвфемизм для «тупой», «наивный».|Тупой;Наивный;Глупый|Он какой-то солнечный.|50|1
+Это фиаско, братан|2017|2026|m|Провал, неудача|«Это фиаско, братан» — фраза из вирусного видео 2017 с собакой сиба-ину.|Провал;Неудача;Фиаско|— Я не сдал экзамен. — Это фиаско, братан.|90|1
+Бать, нормально?|2014|2026|m|Всё нормально?|«Бать, нормально?» — мем с рыбаком, который отвечает «Нормальноооо».|Нормально;Всё ок;Нормальноооо|— Ты как? — Нормальноооо!|85|1
+Извини, но нет|2025|2026|m|Вежливый отказ|«Извини, но нет» — фраза сотрудника ПВЗ Ozon (октябрь 2025).|Отказ;Нет;Вежливость|— Пойдём гулять? — Извини, но нет.|90|1
+Это приятно знать, но тем не менее|2025|2026|m|Вежливый отказ|«Это приятно знать, но тем не менее» — фраза сотрудника ПВЗ (2025).|Отказ;Корпоратив;Вежливость|— Я тебе нравлюсь? — Это приятно знать, но тем не менее...|85|1
+Страшно, очень страшно|2016|2026|m|Неизвестность, страх|«Страшно, очень страшно, мы не знаем, что это такое» — мем из сюжета о снежных блохах (2016).|Страх;Неизвестность;Паника|— Что это? — Страшно, очень страшно, мы не знаем, что это такое...|88|1
+Я поставлю 2 по русскому|2026|2026|m|Угроза учительницы|«Я поставлю 2 по русскому, 2 по литературе и не допуск к экзамену!» — мем 2026.|Угроза;Школа;Двойка|— Ты не сделал домашку? — Я поставлю 2 по русскому!|80|1
+СКОЛЬКО?!? Да ты что афигел?!?|2024|2026|m|Крайнее удивление|«СКОЛЬКО?!? Да ты что афигел?!?» — мем с бабушкой.|Удивление;Возмущение;Шок|— Это стоит 10 тысяч. — СКОЛЬКО?!? Да ты что афигел?!?|85|1
+Минут 10-15, 5-10 пятого|2009|2026|m|Путаница во времени|«Минут 10-15, 5-10 пятого» — мем из интервью 2009 с Ниной Михайловной.|Время;Путаница;Бессвязность|— Во сколько это было? — Минут 10-15, 5-10 пятого...|85|1
+Смайл фейс и улыбнитесь|2026|2026|m|Притворная улыбка|«Скажите смайл фейс и улыбнитесь... СМААЙЛ ФЕЕЙС» — мем 2026.|Улыбка;Фальшь;Селфи|— Скажите смайл фейс! — СМААЙЛ ФЕЕЙС!|80|1
+Да.. да.да.... да|2026|2026|m|Согласие с сомнением|«Да.. да.да.... да» — мем 2026, выражающий неуверенное согласие.|Согласие;Сомнение;Неуверенность|— Ты придёшь? — Да.. да.да.... да.|75|1
+Давай по новой, Миша, все херня!|2005|2026|m|Призыв начать заново|«Давай по новой, Миша, всё херня!» — фраза из ролика Михаила Добкина (2005).|Заново;Провал;Переделать|— Мы всё сломали. — Давай по новой, Миша, всё херня!|85|1
+Повар спрашивает повара|2008|2026|m|Абсурдный диалог|«Повар спрашивает повара» — культовый мем с мальчиком Антоном (2008).|Повар;Анекдот;Смех|— Повар, какова твоя профессия? — Я повар!|80|1
+ЧТО?!? ПОЧЕМУ Я ЧЕРНЫЙ?!?|2022|2026|m|Расовый вопрос|«ЧТО?!? ПОЧЕМУ Я ЧЕРНЫЙ?!?» — мем на основе англоязычного видео.|Раса;Дискриминация;Шок|— Почему ты не со мной? — Потому что ты чёрный! — ЧТО?!?|75|1
+Это мой гриб, я его ем|2016|2026|m|Абсурдная собственность|«Это мой гриб, я его ем» — мем из видео 2016.|Гриб;Собственность;Абсурд|— Можно мне гриб? — Нет, это мой гриб, я его ем!|70|1
+Вы кто такие? Я вас не звал!|2008|2026|m|Отпор незваным гостям|«Вы кто такие? Я вас не звал! Идите нафиг!» — фраза отшельника из репортажа НТВ (2008).|Незваные гости;Отпор;Нафиг|— Привет, мы из доставки! — Вы кто такие? Я вас не звал!|85|1
+Дело в шляпе.. нюхай бэбру|2020|2026|m|Грубый отказ|«Серёжа, дело в шляпе. Нюхай бебру» — фраза из видео 2018, пик 2020.|Бебру;Отказ;Грубость|— Дай списать! — Нюхай бебру!|80|1
+ШаМпУнЬ ЖумАйсФНба|2019|2026|m|Абсурдная реклама|«Шампунь Жумайсынба» — мем из казахстанского шоу 2013, вирусным стал в 2019-2020.|Шампунь;Казахстан;Абсурд|— Какой шампунь? — Жумайсынба!|75|1
+Тихо не спеша, без суеты|2026|2026|m|Абсурдный СССР-тренд|«Тихо, не спеша, без суеты, не дыша, ни шиша, четыре карандаша, черемша» — фраза из ИИ-мемов (2026).|СССР;Абсурд;Черемша|— Как делали в СССР? — Тихо, не спеша, без суеты...|85|1
+ОО ПОВЕЗЛО ПОВЕЗЛО|2020|2026|m|Крупное везение|«Оо, повезло, повезло» — мем с человеком в маске Анонимуса (2020).|Везение;Удача;Minecraft|— Я выиграл в лотерею! — Оо, повезло, повезло!|75|1
+Слушай, а ловко ты это придумал|2021|2026|m|Похвала за хитрость|«Слушай, а ловко ты это придумал» — фраза Добрыни Никитича (2006), мем с 2021.|Хитрость;Похвала;Молодец|— Я придумал, как обмануть систему! — Слушай, а ловко ты это придумал!|80|1
+С вами Демон и Андроид|2021|2026|m|Школьное приветствие|«С вами Демон и Андроид» — мем с двумя школьниками (2021).|Приветствие;Школьники;SAMP|— Всем привет, с вами Демон и Андроид!|70|1
+Окэээй летсгооу|2021|2026|m|Безысходность, смирение|«Окей летс гоу» — мем из нидерландского шоу (2014), тренд TikTok 2021.|Летс гоу;Смирение;Скука|— Нас окружили. — Окэээй летсгооу.|85|1
+Аааай, меня снайпнули в полёте|2021|2026|m|Проигрыш в игре|«Аааай, меня снайпнули в полёте» — мем (2009), популярность 2020-2021.|Снайп;Проигрыш;Brawl Stars|— Ты проиграл? — Аааай, меня снайпнули в полёте!|80|1
+Борщ с капусткой, но не красный|2008|2026|m|Описание еды|«Тут был хороший борщ, с капусткой, но не красный» — мем с Никитой Литвинковым (2008).|Борщ;Столовая;Еда|— Что вы ели? — Борщ с капусткой, но не красный!|85|1
+Минус три! ВУУУУХУУ|2020|2026|m|Радость от трёх убийств|«Ес, минус три, вуху!» — мем с парнем в CS (видео 2009, мем 2020).|Минус три;CS;Радость|— Ты сделал тройное убийство! — Минус три! ВУУУУХУУ!|80|1
+Нового года не будет! Дед Мороз принял Ислам|2016|2026|m|Отмена праздника|«Нового года не будет! Дед Мороз принял Ислам» — мем с Папой Смурфом (2016).|Новый год;Дед Мороз;Ислам|— Будет Новый год? — Нового года не будет! Дед Мороз принял Ислам!|85|1
+Толик это подъезд|2020|2026|m|Ошибка с подъездом|«Толик, это подъезд!» — мем, пик популярности 2020.|Толик;Подъезд;Ошибка|— Где я? — Толик, это подъезд!|70|1
+СуперБуся|2020|2026|m|Бабушка-блогер|«СуперБуся» — ник Екатерины Горбуневой, звезда TikTok 2020.|Бабушка;TikTok;Блогер|— Кто это? — Это СуперБуся!|75|1
+Сколько можно блин?|2026|2026|m|Крик отчаяния|«Сколько можно блин? Сколько можно блин?!? Да емае Я НЕ МОГУУ» — мем 2026.|Отчаяние;Раздражение;Невозможность|— Опять реклама! — Сколько можно блин?!? Да емае Я НЕ МОГУУ!|85|1
+// НОВЫЕ ДОБАВЛЕНИЯ (без матов, безопасные)
+Пофиг|2000|2026|s|Всё равно|«Пофиг» — выражение безразличия, всё равно.|Всё равно;Без разницы;Неважно|Мне пофиг на это.|75|1
+Сорян|2010|2026|s|Извини|«Сорян» — от англ. sorry. Неформальные извинения.|Извини;Прости;Сори|Сорян, я опоздал.|80|1
+Пж|2000|2026|s|Пожалуйста|«Пж» — сокращение от «пожалуйста».|Пожалуйста;Прошу;Умоляю|Дай списать, пж!|80|1
+Лан|2000|2026|s|Ладно|«Лан» — сокращение от «ладно».|Ладно;Хорошо;Ок|Лан, договорились.|80|1
+Шо|2000|2026|s|Что|«Шо» — искажённое «что».|Что;Чё;Чего|Шо ты сказал?|70|1
+Чё|2000|2026|s|Что|«Чё» — разговорное «что».|Что;Шо;Чего|Чё происходит?|85|1
+Ща|2000|2026|s|Сейчас|«Ща» — сокращение от «сейчас».|Сейчас;Погоди;Минуту|Ща приду!|85|1
+Типа|2000|2026|s|Вроде|«Типа» — слово-паразит, «вроде».|Вроде;Как бы;Типо|Он типа крутой.|75|1
+Короче|2000|2026|s|В общем|«Короче» — вводное слово.|В общем;В итоге;Так вот|Короче, я не приду.|80|1
+Крч|2000|2026|s|Короче|«Крч» — сокращение от «короче».|Короче;В общем;Итог|Крч, всё плохо.|85|1
+Походу|2000|2026|s|Видимо|«Походу» — вероятно, кажется.|Видимо;Кажется;Наверно|Походу будет дождь.|75|1
+Внатуре|2000|2026|s|Правда|«Внатуре» — правда, серьёзно.|Правда;Серьёзно;Реально|Внатуре? Не верю!|70|1
+Тип того|2000|2026|s|Что-то вроде|«Тип того» — «типа того».|Вроде того;Что-то такое;Примерно|Ну, тип того.|70|1
+Лол кек чебурек|2015|2026|m|Шутка|«Лол кек чебурек» — абсурдное словосочетание для смеха.|Смешно;Лол;Кек|Лол кек чебурек, я не могу!|65|1
+Агонь|2010|2026|s|Отлично, круто|«Агонь» — искажённое «огонь», означает «круто».|Огонь;Круто;Класс|Этот трек — агонь!|70|1
+Красава|2010|2026|s|Молодец|«Красава» — молодец, красавчик.|Молодец;Красавчик;Умница|Красава, так держать!|75|1
+Молодчик|2000|2026|s|Молодец|«Молодчик» — молодец, хорошо сделал.|Молодец;Красавчик;Умничка|Молодчик, справился!|70|1
+Чётко|2000|2026|s|Хорошо, точно|«Чётко» — хорошо, точно, красиво.|Хорошо;Точно;Круто|Ты чётко всё сделал.|70|1
+Норм|2000|2026|s|Нормально|«Норм» — сокращение от «нормально».|Нормально;Ок;Хорошо|Всё норм, не парься.|85|1
+Неа|2000|2026|s|Нет|«Неа» — разговорное «нет».|Нет;Не;Нифига|— Ты идёшь? — Неа.|75|1
+Агась|2000|2026|s|Да|«Агась» — шутливое «да», «ага».|Да;Ага;Угу|Агась, конечно!|70|1
+Кншн|2000|2026|s|Конечно|«Кншн» — сокращение от «конечно».|Конечно;Ясно;Разумеется|Кншн, приходи!|75|1
+Дно|2000|2026|s|Очень плохо|«Дно» — что-то очень плохое.|Плохо;Ужас;Кошмар|Это полное дно.|70|1
+Сойдёт|2000|2026|s|Нормально|«Сойдёт» — приемлемо.|Пойдёт;Приемлемо;Ладно|Ну, сойдёт.|70|1
+Тема|2000|2026|s|Хорошая идея|«Тема» — хорошая идея.|Идея;Хорошо;Класс|Это тема! Давай так и сделаем.|75|1
+Рил|2020|2026|s|Реально|«Рил» — от англ. real, реально.|Реально;Правда;Серьёзно|Рил, это так и было?|80|1
+Азаза|2000|2026|s|Смех|«Азаза» — звук смеха.|Смех;Ха-ха;Угар|Азаза, не могу!|60|1
+Забей|2000|2026|s|Забудь|«Забей» — не бери в голову.|Забудь;Не парься;Плюнь|Забей на это.|80|1
+Уважуха|2000|2026|s|Уважение|«Уважуха» — от «уважение».|Уважение;Респект;Почёт|Уважуха тебе!|70|1
+Жесть|2000|2026|s|Круто или ужасно|«Жесть» — что-то крайнее.|Круто;Ужас;Огонь|Жесть, как круто!|75|1
+Угар|2000|2026|s|Смешно|«Угар» — что-то очень смешное.|Смешно;Ржака;Весело|Это был полный угар!|70|1
+Огонь|2000|2026|s|Очень круто|«Огонь» — очень круто.|Круто;Класс;Агонь|Этот фильм — огонь!|75|1
+Бомба|2000|2026|s|Очень круто|«Бомба» — очень круто.|Круто;Огонь;Класс|Это не трек, а бомба!|70|1
+Зашквар|2015|2026|s|Позор|«Зашквар» — позор, стыд.|Позор;Стыд;Кринж|Это полный зашквар.|65|1
+Чувак|2000|2026|s|Парень|«Чувак» — обращение к парню.|Парень;Друг;Братан|Чувак, ты где?|80|1
+Мэн|2000|2026|s|Мужчина|«Мэн» — от англ. man.|Мужчина;Парень;Друг|Йоу, мэн, как дела?|65|1
+Слышь|2000|2026|s|Эй|«Слышь» — обращение.|Эй;Слушай;Эй ты|Слышь, подойди сюда.|70|1
+Ну такое|2018|2026|s|Посредственно|«Ну такое» — не очень, сомнительно.|Посредственно;Не очень;Мид|Ну такое, не впечатлило.|75|1
+Мда|2000|2026|s|Разочарование|«Мда» — выражение разочарования.|Разочарование;Эх;Печаль|Мда, я ожидал большего.|75|1
+Йоу|2000|2026|s|Приветствие|«Йоу» — неформальное приветствие.|Привет;Хай;Ку|Йоу, как дела?|70|1
+Каво|2000|2026|s|Что?|«Каво» — искажённое «кого?», «что?».|Что;Кого;Чего|Каво? Не понял.|70|1
+Мут|2015|2026|s|Блокировка чата|«Мут» — запрет на сообщения.|Блок;Запрет;Тишина|Ему дали мут за спам.|60|1
+Холивар|2000|2026|s|Спор|«Холивар» — от англ. holy war.|Спор;Ссора;Битва|Опять холивар в комментах.|65|1
+Срач|2000|2026|s|Ссора в комментах|«Срач» — ожесточённая ссора в интернете.|Ссора;Спор;Драка|Начался срач из-за ерунды.|60|1
+Баттхерт|2015|2026|s|Обида|«Баттхерт» — от англ. butthurt, обида.|Обида;Злость;Печаль|У него баттхерт из-за проигрыша.|60|1
+На чиле|2018|2026|s|Расслабленно|«На чиле» — в расслабленном состоянии.|Расслабленно;Спокойно;В кайф|Сегодня на чиле.|75|1
+По кайфу|2020|2026|s|В удовольствие|«По кайфу» — в удовольствие.|В кайф;Приятно;Хорошо|Мне это по кайфу.|70|1
+Мне норм|2010|2026|s|Меня устраивает|«Мне норм» — меня всё устраивает.|Устраивает;Нормально;Хорошо|Мне норм, не переживай.|70|1
+Всё ок|2000|2026|s|Всё хорошо|«Всё ок» — всё в порядке.|Хорошо;Нормально;Порядок|Всё ок, не волнуйся.|80|1
+Держись|2000|2026|s|Поддержка|«Держись» — форма поддержки.|Держись;Крепись;Терпи|Держись, всё будет хорошо.|75|1
+Не парься|2000|2026|s|Не волнуйся|«Не парься» — не переживай.|Не волнуйся;Забей;Расслабься|Не парься по пустякам.|80|1
+Игнор|2000|2026|s|Игнорирование|«Игнор» — от англ. ignore.|Игнор;Молчание;Тишина|Он в игноре уже неделю.|70|1
+Кина не будет|2008|2026|m|Отмена|«Кина не будет — электричество кончилось» — мем из мультфильма.|Отмена;Облом;Не будет|Кина не будет, всё отменили.|70|1
+Это не баг это фича|2015|2026|m|Шутка про ошибки|«Это не баг, это фича» — мем программистов.|Фича;Ошибка;Так и задумано|Это не баг, это фича!|75|1
+Всем спасибо все свободны|2010|2026|m|Конец|«Всем спасибо, все свободны» — завершение.|Конец;Всё;До свидания|Всем спасибо, все свободны!|70|1
+У меня лапки|2018|2026|m|Отмазка|«У меня лапки» — отмазка от дел.|Не могу;Отмазка;Никак|Я не могу ничего делать, у меня лапки.|75|1
+Я в домике|2015|2026|m|В безопасности|«Я в домике» — я в безопасности.|Безопасно;Спрятался;Домик|Не трогайте меня, я в домике.|70|1
+Ребята давайте жить дружно|2000|2026|m|Кот Леопольд|«Ребята, давайте жить дружно» — фраза Кота Леопольда.|Дружба;Мир;Кот Леопольд|Ребята, давайте жить дружно!|80|1
+Ну и ладно ну и пожалуйста|2005|2026|m|Обиженно|«Ну и ладно, ну и пожалуйста» — обиженная реакция.|Обида;Ладно;Пожалуйста|Ну и ладно, ну и пожалуйста!|65|1
+Работа не волк|2000|2026|m|Шутка про работу|«Работа не волк, в лес не убежит» — шутка.|Работа;Шутка;Отговорка|Работа не волк, можно и отдохнуть.|70|1
+Апгрейд|2000|2026|s|Улучшение|«Апгрейд» — от англ. upgrade.|Улучшение;Прокачка;Обновление|Я сделал апгрейд компа.|65|1
+Нерф|2015|2026|s|Ухудшение|«Нерф» — от англ. nerf.|Ослабление;Ухудшение;Минус|Разрабы сделали нерф героя.|55|1
+Бафф|2015|2026|s|Улучшение|«Бафф» — от англ. buff.|Усиление;Улучшение;Плюс|Получил бафф на скорость.|55|1
+Фарм|2010|2026|s|Заработок в игре|«Фарм» — от англ. farm.|Заработок;Добыча;Гринд|Ушёл на фарм ресурсов.|65|1
+Гринд|2018|2026|s|Монотонный фарм|«Гринд» — от англ. grind.|Монотонно;Фарм;Рутина|Гринд в этой игре утомляет.|60|1
+Спавн|2010|2026|s|Появление|«Спавн» — от англ. spawn.|Появление;Возрождение;Место|Враги спавнятся каждые 10 секунд.|55|1
+Раш|2010|2026|s|Быстрая атака|«Раш» — от англ. rush.|Атака;Натиск;Штурм|Го раш по центру!|65|1
+Апдейт|2000|2026|s|Обновление|«Апдейт» — от англ. update.|Обновление;Патч;Новое|Вышел новый апдейт.|70|1
+Патч|2000|2026|s|Обновление|«Патч» — от англ. patch.|Обновление;Апдейт;Фикс|Разрабы выпустили патч.|65|1
+Скип|2015|2026|s|Пропуск|«Скип» — от англ. skip.|Пропуск;Пролистать;Мимо|Скип этой сцены.|65|1
+Скипнуть|2015|2026|s|Пропустить|«Скипнуть» — пропустить.|Пропустить;Пролистать;Пропуск|Скипнул рекламу.|65|1
+Хилка|2010|2026|s|Лечебное средство|«Хилка» — от англ. heal.|Лечилка;Аптечка;Зелье|Выпил хилку и продолжил бой.|60|1
+Дроп|2010|2026|s|Выпадение предмета|«Дроп» — от англ. drop.|Выпадение;Добыча;Лут|С босса выпал редкий дроп.|60|1
+Лут|2015|2026|s|Добыча в игре|«Лут» — от англ. loot.|Добыча;Награда;Трофей|Собрал весь лут с уровня.|60|1
+Крафт|2015|2026|s|Создание предмета|«Крафт» — от англ. craft.|Создание;Изготовление;Сборка|Крафтнул себе меч.|60|1
+Пвп|2010|2026|s|Бой между игроками|«Пвп» — от англ. PvP.|Бой;Дуэль;Драка|Го на пвп!|55|1
+Пве|2010|2026|s|Бой против мобов|«Пве» — от англ. PvE.|Мобы;Бой;Монстры|Сегодня только пве.|50|1
+Тиммейт|2015|2026|s|Товарищ по команде|«Тиммейт» — от англ. teammate.|Напарник;Сокомандник;Тим|Мой тиммейт — нуб.|60|1
+Смурф|2020|2026|s|Опытный игрок под видом новичка|«Смурф» — от англ. smurf.|Смурфить;Опытный;Новичок|Этот смурф нас разносит.|55|1
+Ну чё|2000|2026|s|Ну как|«Ну чё» — «ну как», «ну что».|Ну как;Ну что;И как|Ну чё, пошли?|75|1
+По-любому|2000|2026|s|Обязательно|«По-любому» — обязательно, точно.|Точно;Обязательно;100%|По-любому приду!|70|1
+Всё такое|2015|2026|s|И тому подобное|«Всё такое» — и тому подобное.|И т.п.;Всё такое;И прочее|Ну, там всякое такое.|65|1
+По-любэ|2010|2026|s|Точно, обязательно|«По-любэ» — обязательно.|Точно;Обязательно;100%|По-любэ будет круто.|65|1
+Ща-ща|2000|2026|s|Сейчас-сейчас|«Ща-ща» — уменьшительное от «ща».|Сейчас;Погоди;Подожди|Ща-ща, минутку!|60|1
+Канеш|2000|2026|s|Конечно|«Канеш» — искажённое «конечно».|Конечно;Ясно;Разумеется|Канеш, приходи!|75|1
+Здарова|2000|2026|s|Привет|«Здарова» — «здорово», приветствие.|Привет;Здравствуй;Хай|Здарова, братан!|70|1
+Аривидерчи|2000|2026|s|Пока|«Аривидерчи» — от итал. arrivederci, пока.|Пока;До встречи;Бай|Аривидерчи, дружище!|50|1
+Дароу|2015|2026|s|Привет|«Дароу» — от англ. приветствие.|Привет;Хай;Здарова|Дароу, как сам?|65|1
+Чики-брики|2005|2026|s|Всё отлично|«Чики-брики» — всё отлично, всё в порядке.|Отлично;Хорошо;Норм|Чики-брики, всё отлично!|55|1
+Держи краба|2010|2026|s|Приветствие|«Держи краба» — дружеское приветствие с рукопожатием.|Привет;Рукопожатие;Хай|Держи краба, бро!|60|1
+`;
+const D = RAW.trim().split('\n').filter(Boolean).map(l=>{
+  const p = l.split('|');
+  return { w:p[0]||'', yf:+p[1]||2000, yt:+p[2]||2026,
+    t: p[3]==='m'?'meme':(p[3]==='u'?'useful':'slang'),
+    sh:p[4]||'', d:p[5]||'', syn:(p[6]||'').split(';').filter(Boolean),
+    e:p[7]||'', p:+p[8]||50, n:p[9]==='1' };
+});
+
+function maskWord(text, word){
+  if(!text || !word) return text;
+  const wordLower = word.toLowerCase();
+  const textLower = text.toLowerCase();
+  let result = '';
+  let i = 0;
+  const isWordChar = (c) => /[a-zа-яё0-9]/i.test(c);
+  while(i < text.length){
+    const idx = textLower.indexOf(wordLower, i);
+    if(idx === -1){ result += text.slice(i); break; }
+    const before = idx === 0 ? '' : textLower[idx-1];
+    const after = idx + word.length >= textLower.length ? '' : textLower[idx+word.length];
+    if((!before || !isWordChar(before)) && (!after || !isWordChar(after))){
+      result += text.slice(i, idx) + '***';
+      i = idx + word.length;
+    } else {
+      result += text.slice(i, idx + 1);
+      i = idx + 1;
+    }
+  }
+  return result;
+}
+
+const TYPE_DIFFICULTY = {
+  meaning_choice:'easy', reverse_meaning:'easy', true_false_meaning:'easy', type_choice:'easy', quote_choice:'easy',
+  association_choice:'normal', situation_choice:'normal', synonym_choice:'normal', word_class:'normal',
+  popular:'normal', which_is_meme:'normal', which_is_slang:'normal', more_popular:'normal',
+  match:'normal', synonym_match:'normal',
+  year_choice:'hard', example_fill:'hard', origin_choice:'hard', pick_most_popular:'hard',
+  pick_least_popular:'hard', which_is_older:'hard', which_is_newer:'hard', pick_era:'hard',
+  meaning_input:'expert', word_input:'expert', quote_input:'expert'
+};
+const DIFF_LABELS = {
+  easy:{text:'🟢 Лёгкое задание'},
+  normal:{text:'🟡 Нормальное задание'},
+  hard:{text:'🟠 Сложное задание'},
+  expert:{text:'🟣 Экспертное задание'}
+};
+
+const SK='slangAppUser_v24';
+const DEFAULT_AVATAR='😎';
+let user = { streak:0, wins:0, totalLessons:0, totalXP:0, mastered:[], history:[], lastPlayed:null, likes:[], nickname:'Игрок', avatar:DEFAULT_AVATAR, ratings:{}, coins:0, promocodes:[] };
+try{ const s=JSON.parse(localStorage.getItem(SK)); if(s && typeof s==='object'){ user={...user, ...s}; } }catch(e){}
+if(!Array.isArray(user.likes)) user.likes = [];
+if(!Array.isArray(user.mastered)) user.mastered = [];
+if(!Array.isArray(user.history)) user.history = [];
+if(!Array.isArray(user.promocodes)) user.promocodes = [];
+if(typeof user.coins!=='number') user.coins = 0;
+if(!user.ratings || typeof user.ratings!=='object' || Array.isArray(user.ratings)) user.ratings = {};
+
+function saveUser(){ try{ localStorage.setItem(SK, JSON.stringify(user)); }catch(e){} }
+function addXP(a){ user.totalXP+=a; saveUser(); }
+function addCoins(n){ user.coins += n; saveUser(); updateCoinsUI(); }
+function updateCoinsUI(){
+  const txt = formatCoins(user.coins);
+  const el1 = document.getElementById('coinsCount'); if(el1) el1.textContent = txt;
+  const el2 = document.getElementById('profileCoins'); if(el2) el2.textContent = txt;
+}
+function formatCoins(n){
+  if(n >= 1e12) return (n/1e12).toFixed(2).replace(/\.?0+$/,'') + 'T';
+  if(n >= 1e9) return (n/1e9).toFixed(2).replace(/\.?0+$/,'') + 'B';
+  if(n >= 1e6) return (n/1e6).toFixed(2).replace(/\.?0+$/,'') + 'M';
+  if(n >= 1e3) return (n/1e3).toFixed(1).replace(/\.?0+$/,'') + 'K';
+  return String(n);
+}
+function updateStreak(){
+  const t=new Date().toDateString(); if(user.lastPlayed===t) return;
+  const y=new Date(Date.now()-86400000).toDateString();
+  user.streak = user.lastPlayed===y ? user.streak+1 : 1;
+  user.lastPlayed=t; saveUser();
+}
+let toastTimer=null;
+function showToast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg; t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer=setTimeout(()=>t.classList.remove('show'), 2600);
+}
+
+const PROMOCODES = {
+  'этофиаскобратан': { coins: 100, msg: 'Промокод активирован! +100 🪙' },
+  '212121': { coins: 1000000000000, msg: 'Промокод активирован! +1 триллион 🪙' }
+};
+function applyPromocode(code){
+  if(!code) return { ok:false, msg:'Введите промокод' };
+  const normalized = code.trim().toLowerCase();
+  const promo = PROMOCODES[normalized];
+  if(!promo) return { ok:false, msg:'❌ Неизвестный промокод' };
+  if(user.promocodes.includes(normalized)) return { ok:false, msg:'⚠️ Этот промокод уже использован' };
+  user.promocodes.push(normalized);
+  user.coins += promo.coins;
+  saveUser();
+  updateCoinsUI();
+  return { ok:true, msg: promo.msg };
+}
+
+const $=id=>document.getElementById(id);
+const gridEl=$('grid'), searchEl=$('search'), clearEl=$('clear'), statsEl=$('stats'), emptyEl=$('empty');
+const modalEl=$('modal'), modalContent=$('modalContent'), tabsEl=$('tabs'), yearsEl=$('years');
+const yearFilterWrap=$('yearFilterWrap'), yearFilter=$('yearFilter'), searchWrap=$('searchWrap');
+let currentTab='all', currentYear='all', searchQuery='';
+
+function esc(s){ return String(s).replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+function hl(t,q){
+  const safe=esc(t); if(!q) return safe;
+  const re=q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+  return safe.replace(new RegExp(re,'gi'), m=>`<mark style="background:rgba(168,85,247,.4);color:#fff;border-radius:4px;padding:0 2px;">${m}</mark>`);
+}
+
+function renderCard(item, qOverride){
+  const q = qOverride !== undefined ? qOverride : searchQuery;
+  const liked = user.likes.includes(item.w);
+  return `<article class="card era-${item.yf}" data-word="${esc(item.w)}">
+    <div class="card-top">
+      <h3 class="card-word">${hl(item.w, q)}</h3>
+      <div class="card-badges">
+        ${item.n?'<span class="badge badge-new">NEW</span>':''}
+        <span class="badge badge-type ${item.t==='meme'?'meme':''}">${item.t==='meme'?'МЕМ':(item.t==='useful'?'ПОЛЕЗНО':'СЛЕНГ')}</span>
+        <span class="badge badge-year">${item.yf}–${item.yt}</span>
+        <button class="like-btn ${liked?'liked':''}" data-like="${esc(item.w)}">${liked?'❤️':'🤍'}</button>
+      </div>
+    </div>
+    <p class="card-short">${hl(item.sh, q)}</p>
+    <div class="card-foot">
+      <span style="color:var(--muted);font-weight:600;">📊</span>
+      <div class="pop-bar"><div class="pop-fill" style="width:${item.p}%"></div></div>
+      <b style="font-size:13px;color:var(--accent,var(--purple));min-width:38px;text-align:right;">${item.p}<span style="font-size:10px;color:var(--muted);">/100</span></b>
+    </div>
+  </article>`;
+}
+
+function updateYearUI(){
+  if(currentTab==='all'){
+    yearsEl.style.display='flex'; yearFilterWrap.style.display='none';
+    yearsEl.querySelectorAll('.year-btn').forEach(b=>b.classList.toggle('active', b.dataset.year===currentYear));
+  } else {
+    yearsEl.style.display='none'; yearFilterWrap.style.display='block';
+    yearFilter.value = currentYear;
+  }
+}
+
+function renderDictionary(){
+  updateYearUI();
+  if(currentYear==='2027'){
+    gridEl.innerHTML=''; emptyEl.style.display='block';
+    emptyEl.innerHTML='<div class="icon">😴</div><h3>Тут пока пусто!</h3><p>2027 ещё не наступил</p>';
+    statsEl.innerHTML=''; return;
+  }
+  emptyEl.innerHTML='<div class="icon">🔍</div><h3>Ничего не нашлось</h3><p>Попробуй другой фильтр</p>';
+  let list=[...D];
+  if(currentTab==='new') list=list.filter(x=>x.n);
+  else if(currentTab==='favorite') list=list.filter(x=>user.likes.includes(x.w));
+  else if(currentTab==='useful') list=list.filter(x=>x.t!=='meme');
+  else if(currentTab==='meme') list=list.filter(x=>x.t==='meme');
+  else if(currentTab==='retro') list=list.filter(x=>x.yf<=2015);
+  if(currentTab==='popular') list.sort((a,b)=>b.p-a.p);
+  else list.sort((a,b)=>b.yf-a.yf||b.p-a.p);
+  if(currentYear!=='all'){ const y=+currentYear; list=list.filter(x=>x.yf<=y && y<=x.yt); }
+  if(searchQuery){
+    const q=searchQuery;
+    list=list.filter(x=>x.w.toLowerCase().includes(q)||x.sh.toLowerCase().includes(q)||x.d.toLowerCase().includes(q)||x.syn.some(sy=>sy.toLowerCase().includes(q)));
+  }
+  statsEl.innerHTML=`Найдено: <b>${list.length}</b> из ${D.length} записей`;
+  if(list.length===0){ gridEl.innerHTML=''; emptyEl.style.display='block'; return; }
+  emptyEl.style.display='none';
+  gridEl.innerHTML=list.map(x=>renderCard(x)).join('');
+  attachCardHandlers(gridEl);
+}
+function attachCardHandlers(c){
+  c.querySelectorAll('.card').forEach(card=>{
+    card.addEventListener('click', e=>{
+      if(e.target.closest('.like-btn')) return;
+      const it=D.find(x=>x.w===card.dataset.word); if(it) openModal(it);
+    });
+  });
+  c.querySelectorAll('.like-btn').forEach(btn=>{
+    btn.addEventListener('click', e=>{
+      e.stopPropagation();
+      const w=btn.dataset.like;
+      if(user.likes.includes(w)) user.likes=user.likes.filter(x=>x!==w);
+      else user.likes.push(w);
+      saveUser();
+      btn.classList.toggle('liked', user.likes.includes(w));
+      btn.textContent = user.likes.includes(w)?'❤️':'🤍';
+      if(currentTab==='favorite') renderDictionary();
+      if(views.profile.classList.contains('active')) renderProfile();
+    });
+  });
+}
+
+function openModal(item){
+  const liked = user.likes.includes(item.w);
+  const rated = user.ratings[item.w] || 0;
+  const stars = [1,2,3,4,5].map(n=>`<button class="star-btn ${n<=rated?'active':''}" data-star-modal="${n}" style="font-size:28px;">★</button>`).join('');
+  modalContent.innerHTML = `
+    <button id="modalClose" style="position:absolute;top:16px;right:16px;width:40px;height:40px;border-radius:50%;border:1px solid var(--border);background:rgba(255,255,255,.05);color:var(--text);font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;">✕</button>
+    <h2 style="font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:700;margin-bottom:12px;word-break:break-word;">${esc(item.w)}</h2>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;">
+      ${item.n?'<span class="badge badge-new">NEW</span>':''}
+      <span class="badge badge-type ${item.t==='meme'?'meme':''}">${item.t==='meme'?'МЕМ':(item.t==='useful'?'ПОЛЕЗНО':'СЛЕНГ')}</span>
+      <span class="badge badge-year">${item.yf}–${item.yt}</span>
+    </div>
+    <div style="margin-bottom:18px;"><div style="font-size:11px;font-weight:800;color:var(--purple);text-transform:uppercase;margin-bottom:8px;">Что это</div><p style="font-size:15px;line-height:1.7;color:#d8d8e6;">${esc(item.d)}</p></div>
+    <div style="margin-bottom:18px;"><div style="font-size:11px;font-weight:800;color:var(--purple);text-transform:uppercase;margin-bottom:8px;">Похожие</div><div style="display:flex;gap:6px;flex-wrap:wrap;">${item.syn.map(sy=>`<span style="padding:6px 12px;border-radius:999px;font-size:13px;font-weight:600;background:rgba(34,211,238,.1);color:var(--cyan);border:1px solid rgba(34,211,238,.25);">${esc(sy)}</span>`).join('')}</div></div>
+    <div style="margin-bottom:18px;"><div style="font-size:11px;font-weight:800;color:var(--purple);text-transform:uppercase;margin-bottom:8px;">Пример</div><p style="font-size:14px;color:var(--muted);padding:12px 14px;background:rgba(0,0,0,.3);border-left:3px solid var(--purple);border-radius:8px;font-style:italic;">«${esc(item.e)}»</p></div>
+    <div style="margin-bottom:18px;"><div style="font-size:11px;font-weight:800;color:var(--gold);text-transform:uppercase;margin-bottom:8px;">⭐ Твоя оценка</div><div style="display:flex;gap:4px;justify-content:center;">${stars}</div></div>
+    <button id="modalLike" style="padding:12px 20px;border-radius:12px;border:1px solid var(--border);background:${liked?'linear-gradient(135deg,#ec4899,#a855f7)':'rgba(255,255,255,.05)'};color:#fff;font-family:inherit;font-weight:700;font-size:14px;cursor:pointer;width:100%;">${liked?'❤️ В избранном':'🤍 Добавить в избранное'}</button>`;
+  modalEl.style.display='flex'; document.body.style.overflow='hidden';
+  const close=()=>{ modalEl.style.display='none'; document.body.style.overflow=''; };
+  $('modalClose').addEventListener('click', close);
+  modalEl.addEventListener('click', e=>{ if(e.target===modalEl) close(); });
+  $('modalLike').addEventListener('click', ()=>{
+    if(user.likes.includes(item.w)) user.likes=user.likes.filter(x=>x!==item.w);
+    else user.likes.push(item.w);
+    saveUser(); close(); renderDictionary();
+    if(views.profile.classList.contains('active')) renderProfile();
+  });
+  modalContent.querySelectorAll('[data-star-modal]').forEach(b=>{
+    b.addEventListener('click', ()=>{
+      const isFirst = user.ratings[item.w] === undefined;
+      user.ratings[item.w] = +b.dataset.starModal;
+      if(isFirst){ addCoins(1); }
+      saveUser();
+      modalContent.querySelectorAll('[data-star-modal]').forEach(x=>x.classList.toggle('active', +x.dataset.starModal <= +b.dataset.starModal));
+    });
+  });
+}
+
+function openQuickDictionary(){
+  const items = D.slice().sort((a,b)=>b.yf-a.yf).map(x=>`
+    <div style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:10px;margin-bottom:8px;">
+      <div style="font-weight:700;font-size:15px;margin-bottom:4px;">${esc(x.w)} <span class="badge badge-type ${x.t==='meme'?'meme':''}" style="margin-left:6px;">${x.t==='meme'?'МЕМ':'СЛЕНГ'}</span></div>
+      <div style="font-size:13px;color:var(--muted);">${esc(x.sh)}</div>
+    </div>
+  `).join('');
+  modalContent.innerHTML = `
+    <button id="modalClose" style="position:absolute;top:16px;right:16px;width:40px;height:40px;border-radius:50%;border:1px solid var(--border);background:rgba(255,255,255,.05);color:var(--text);font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;">✕</button>
+    <h2 style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;margin-bottom:8px;">📖 Словарь</h2>
+    <p style="color:var(--muted);font-size:13px;margin-bottom:16px;">Разблокирован до конца урока</p>
+    <div style="max-height:70vh;overflow-y:auto;">${items}</div>`;
+  modalEl.style.display='flex'; document.body.style.overflow='hidden';
+  const close=()=>{ modalEl.style.display='none'; document.body.style.overflow=''; };
+  $('modalClose').addEventListener('click', close);
+  modalEl.addEventListener('click', e=>{ if(e.target===modalEl) close(); });
+}
+
+function openShop(){
+  modalContent.innerHTML = `
+    <button id="modalClose" style="position:absolute;top:16px;right:16px;width:40px;height:40px;border-radius:50%;border:1px solid var(--border);background:rgba(255,255,255,.05);color:var(--text);font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;">✕</button>
+    <h2 style="font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;margin-bottom:6px;text-align:center;">🏪 Магазин</h2>
+    <p style="color:var(--muted);text-align:center;font-size:13px;margin-bottom:16px;">Баланс: <b style="color:var(--gold);">🪙 ${formatCoins(user.coins)}</b></p>
+    <div class="promo-block">
+      <div class="promo-title">🎁 Промокод</div>
+      <div style="display:flex;gap:8px;">
+        <input type="text" class="promo-input" id="shopPromoInput" placeholder="Введи промокод..." autocomplete="off">
+        <button class="btn btn-primary" id="shopPromoBtn" style="width:auto;margin:0;padding:12px 20px;min-height:44px;font-size:14px;flex-shrink:0;">Активировать</button>
+      </div>
+      <div class="promo-msg" id="shopPromoMsg"></div>
+    </div>
+    <div style="margin-top:24px;">
+      <div class="section-title">🛍️ Товары</div>
+      <div style="text-align:center;padding:40px 20px;color:var(--muted);border:1px dashed var(--border);border-radius:14px;font-size:14px;">
+        🚧 Скоро здесь появятся товары!
+      </div>
+    </div>
+  `;
+  modalEl.style.display='flex'; document.body.style.overflow='hidden';
+  const close=()=>{ modalEl.style.display='none'; document.body.style.overflow=''; };
+  $('modalClose').addEventListener('click', close);
+  modalEl.addEventListener('click', e=>{ if(e.target===modalEl) close(); });
+  $('shopPromoBtn').addEventListener('click', ()=>{
+    const code = $('shopPromoInput').value;
+    const res = applyPromocode(code);
+    const msgEl = $('shopPromoMsg');
+    msgEl.style.color = res.ok ? 'var(--green)' : 'var(--red)';
+    msgEl.textContent = res.msg;
+    if(res.ok){ $('shopPromoInput').value = ''; setTimeout(()=>{ if(modalEl.style.display==='flex' && views.profile.classList.contains('active') === false){ openShop(); } else if(views.profile.classList.contains('active')){ openShop(); } }, 800); }
+    if(res.ok && views.profile.classList.contains('active')){ renderProfile(); }
+  });
+}
+
+searchEl.addEventListener('input', ()=>{
+  searchQuery = searchEl.value.trim().toLowerCase();
+  clearEl.classList.toggle('show', searchEl.value.length>0);
+  renderDictionary();
+});
+clearEl.addEventListener('click', ()=>{
+  searchEl.value=''; searchQuery=''; clearEl.classList.remove('show'); searchEl.focus(); renderDictionary();
+});
+tabsEl.querySelectorAll('.tab-btn').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    tabsEl.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active'); currentTab=btn.dataset.tab; renderDictionary();
+  });
+});
+(function(){
+  let h='<button class="year-btn active" data-year="all">Все годы</button>';
+  for(let y=2000;y<=2027;y++) h+=`<button class="year-btn" data-year="${y}">${y}</button>`;
+  yearsEl.innerHTML=h;
+  yearsEl.querySelectorAll('.year-btn').forEach(b=>{
+    b.addEventListener('click', ()=>{
+      yearsEl.querySelectorAll('.year-btn').forEach(x=>x.classList.remove('active'));
+      b.classList.add('active'); currentYear=b.dataset.year; renderDictionary();
+    });
+  });
+})();
+(function(){
+  let o='<option value="all">Все годы</option>';
+  for(let y=2000;y<=2027;y++) o+=`<option value="${y}">${y}</option>`;
+  yearFilter.innerHTML=o;
+  yearFilter.addEventListener('change', ()=>{ currentYear=yearFilter.value; renderDictionary(); });
+})();
+
+const viewButtons = document.querySelectorAll('.nav-btn');
+const views = { dictionary:$('view-dictionary'), lesson:$('view-lesson'), profile:$('view-profile'), ratings:$('view-ratings') };
+let lessonInProgress=false;
+let lessonDictionaryActive = false;
+let lessonHintUsed = false;
+
+function switchView(n){
+  if(!views[n]) return;
+  Object.values(views).forEach(v=>v && v.classList.remove('active'));
+  views[n].classList.add('active');
+  viewButtons.forEach(b=>b.classList.toggle('active', b.dataset.view===n));
+  searchWrap.style.display = n==='dictionary'?'block':'none';
+  if(n==='profile') renderProfile();
+}
+viewButtons.forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    if(lessonInProgress && btn.dataset.view!=='lesson'){
+      showToast('ЗАВЕРШИ УРОК! Словарь и оценки недоступны во время урока.'); return;
+    }
+    switchView(btn.dataset.view);
+  });
+});
+$('profileBtn').addEventListener('click', ()=>switchView('profile'));
+
+const AVATARS = ['😎','😀','😃','😄','😁','😆','🤣','😂','🙂','😉','😊','😇','🥰','😍','🤩','😘','😜','🤪','🤓','🧐','🤠','🥳','😴','😺','😻','🐱','🦊','🐼','🐨','🐯','🦁','🐸','🐵','🐶','🐺','🦄','🐲','🐉','👾','🤖','👽','🎃','👻','💀','🤡','👹','🦸','🦹','🧙','🧚','🧛','🌟','⭐','✨','🔥','💎','🎮','🎯','🎨','🎭','🏆','👑','💯','🚀','🌙','☀️','❤️','💜','💙','💚','🧡','💛','🖤','🤍','💖','💗','💓','💞','💕'];
+function openAvatarPicker(){
+  const g = AVATARS.map(e=>`<button data-avatar="${e}" style="font-size:32px;padding:10px;border-radius:12px;border:2px solid ${user.avatar===e?'var(--purple)':'var(--border)'};background:${user.avatar===e?'rgba(168,85,247,.2)':'rgba(255,255,255,.03)'};cursor:pointer;min-height:56px;">${e}</button>`).join('');
+  modalContent.innerHTML = `
+    <button id="modalClose" style="position:absolute;top:16px;right:16px;width:40px;height:40px;border-radius:50%;border:1px solid var(--border);background:rgba(255,255,255,.05);color:var(--text);font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;">✕</button>
+    <h2 style="font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;margin-bottom:6px;text-align:center;">Аватар</h2>
+    <p style="color:var(--muted);text-align:center;margin-bottom:20px;font-size:13px;">Любой смайлик</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(56px,1fr));gap:8px;">${g}</div>`;
+  modalEl.style.display='flex'; document.body.style.overflow='hidden';
+  const close=()=>{ modalEl.style.display='none'; document.body.style.overflow=''; };
+  $('modalClose').addEventListener('click', close);
+  modalEl.addEventListener('click', e=>{ if(e.target===modalEl) close(); });
+  modalContent.querySelectorAll('[data-avatar]').forEach(b=>{
+    b.addEventListener('click', ()=>{ user.avatar=b.dataset.avatar; saveUser(); close(); renderProfile(); });
+  });
+}
+function renderProfile(){
+  $('topAvatar').textContent = user.avatar || DEFAULT_AVATAR;
+  $('avatarEmoji').textContent = user.avatar || DEFAULT_AVATAR;
+  $('nicknameInput').value = user.nickname || 'Игрок';
+  $('profileStreak').textContent = user.streak;
+  $('profileWins').textContent = user.wins;
+  $('profileMastered').textContent = user.mastered.length;
+  $('profileXP').textContent = user.totalXP;
+  $('profileLikes').textContent = user.likes.length;
+  $('profileRated').textContent = Object.keys(user.ratings).length;
+  $('favCount').textContent = user.likes.length;
+  $('profileKnowledgeVal').textContent = `${user.mastered.length} / ${D.length}`;
+  $('profileKnowledgeFill').style.width = `${Math.min(100,(user.mastered.length/D.length)*100)}%`;
+  updateCoinsUI();
+  renderFavorites(); renderHistory();
+}
+function renderFavorites(){
+  const g = $('profileFavorites');
+  const favs = D.filter(x=>user.likes.includes(x.w));
+  if(!favs.length){ g.innerHTML = '<div style="text-align:center;color:var(--muted);padding:24px;font-size:14px;grid-column:1/-1;border:1px dashed var(--border);border-radius:14px;">Пока нет любимых. Нажми ❤️!</div>'; return; }
+  g.innerHTML = favs.map(x=>renderCard(x,'')).join('');
+  attachCardHandlers(g);
+}
+function renderHistory(){
+  const hl_= $('historyList');
+  if(!user.history.length){ hl_.innerHTML='<div class="history-item"><span class="h-date">Пока нет уроков</span></div>'; return; }
+  const dn={newbie:'🐣 Новичок',easy:'😀 Лёгкий',medium:'😎 Средний',hard:'🧐 Сложный',expert:'🔥 Эксперт',legend:'👑 Легенда'};
+  hl_.innerHTML = user.history.slice(0,10).map((h,i)=>{
+    const idx = user.history.indexOf(h);
+    return `<div class="history-item" data-hist-idx="${idx}">
+      <div><div style="font-weight:600;">${dn[h.difficulty]||h.difficulty}</div><div class="h-date">${h.date||''} · ${h.time||''}</div></div>
+      <div style="display:flex;align-items:center;gap:8px;"><span class="h-score">${h.score}/${h.total} · ${h.percent}%</span><span style="color:var(--muted);font-size:18px;">›</span></div>
+    </div>`;
+  }).join('');
+  hl_.querySelectorAll('[data-hist-idx]').forEach(el=>{
+    el.addEventListener('click', ()=>openHistDetail(+el.dataset.histIdx));
+  });
+}
+function openHistDetail(idx){
+  const h = user.history[idx]; if(!h) return;
+  const dn={newbie:'🐣 Новичок',easy:'😀 Лёгкий',medium:'😎 Средний',hard:'🧐 Сложный',expert:'🔥 Эксперт',legend:'👑 Легенда'};
+  let details = '<div style="color:var(--muted);text-align:center;padding:16px;">Детали недоступны</div>';
+  if(h.details && h.details.length){
+    details = h.details.map((d,i)=>`
+      <div class="history-detail-q ${d.ok?'ok':'bad'}">
+        <div style="font-size:12px;color:var(--muted);margin-bottom:4px;">Вопрос ${i+1}</div>
+        <div style="font-weight:600;margin-bottom:6px;font-size:14px;">${esc(d.q)}</div>
+        <div style="font-size:13px;margin-bottom:3px;"><span style="color:var(--muted);">Твой ответ:</span> <span style="color:${d.ok?'var(--green)':'var(--red)'};font-weight:600;">${esc(d.player)}</span></div>
+        ${!d.ok?`<div style="font-size:13px;"><span style="color:var(--muted);">Правильный:</span> <span style="color:var(--green);font-weight:600;">${esc(d.correct)}</span></div>`:''}
+      </div>
+    `).join('');
+  }
+  modalContent.innerHTML = `
+    <button id="modalClose" style="position:absolute;top:16px;right:16px;width:40px;height:40px;border-radius:50%;border:1px solid var(--border);background:rgba(255,255,255,.05);color:var(--text);font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;">✕</button>
+    <h2 style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;margin-bottom:6px;">${dn[h.difficulty]||h.difficulty}</h2>
+    <p style="color:var(--muted);font-size:13px;margin-bottom:20px;">${h.date||''} · ${h.time||''} · ${h.score}/${h.total} · ${h.percent}%</p>
+    ${details}`;
+  modalEl.style.display='flex'; document.body.style.overflow='hidden';
+  const close=()=>{ modalEl.style.display='none'; document.body.style.overflow=''; };
+  $('modalClose').addEventListener('click', close);
+  modalEl.addEventListener('click', e=>{ if(e.target===modalEl) close(); });
+}
+$('nicknameInput').addEventListener('input', e=>{
+  let v = e.target.value.slice(0,10);
+  if(e.target.value !== v) e.target.value = v;
+  user.nickname = v || 'Игрок'; saveUser();
+});
+$('nicknameInput').addEventListener('blur', e=>{
+  if(!e.target.value.trim()){ e.target.value='Игрок'; user.nickname='Игрок'; saveUser(); }
+});
+$('profileAvatar').addEventListener('click', openAvatarPicker);
+$('shopBtn').addEventListener('click', openShop);
+
+const ALL_TYPES = ['meaning_choice','reverse_meaning','type_choice','synonym_choice','example_fill',
+  'pick_most_popular','pick_least_popular','which_is_meme','which_is_slang','which_is_older','which_is_newer',
+  'popular','year_choice','meme_desc','match','true_false_meaning','more_popular','pick_era','synonym_match','word_class',
+  'quote_choice','origin_choice','situation_choice','association_choice','fill_blank_quote',
+  'meaning_input','word_input','quote_input'];
+
+const DIFFICULTIES = {
+  newbie: { emoji:'🐣', name:'Новичок', desc:'5 · только значения', count:5, options:4,
+    types:['meaning_choice','reverse_meaning','true_false_meaning','quote_choice','association_choice'] },
+  easy: { emoji:'😀', name:'Лёгкий', desc:'7 · + категория + сопоставление', count:7, options:5,
+    types:['meaning_choice','reverse_meaning','true_false_meaning','type_choice','match','quote_choice','origin_choice','association_choice','fill_blank_quote','meaning_input'] },
+  medium: { emoji:'😎', name:'Средний', desc:'10 · + синонимы + популярность', count:10, options:5,
+    types:['meaning_choice','reverse_meaning','true_false_meaning','type_choice','synonym_choice','which_is_meme','which_is_slang','popular','match','more_popular','word_class','quote_choice','origin_choice','situation_choice','association_choice','fill_blank_quote','meaning_input','word_input'] },
+  hard: { emoji:'🧐', name:'Сложный', desc:'12 · + годы + пропуски', count:12, options:6,
+    types:['meaning_choice','reverse_meaning','true_false_meaning','type_choice','synonym_choice','which_is_meme','which_is_slang','popular','year_choice','example_fill','meme_desc','pick_most_popular','match','more_popular','word_class','pick_era','synonym_match','which_is_older','which_is_newer','quote_choice','origin_choice','situation_choice','association_choice','fill_blank_quote','meaning_input','word_input','quote_input'] },
+  expert: { emoji:'🔥', name:'Эксперт', desc:'15 · все типы заданий', count:15, options:6, types: ALL_TYPES },
+  legend: { emoji:'👑', name:'Легенда', desc:'20 · без пощады', count:20, options:6, types: ALL_TYPES }
+};
+let selectedDifficulty='easy';
+
+(function buildDiffCards(){
+  const g = $('difficultyGrid');
+  if(!g) return;
+  g.innerHTML = Object.entries(DIFFICULTIES).map(([k,d])=>`
+    <div class="difficulty-card ${k===selectedDifficulty?'selected':''}" data-diff="${k}">
+      <div class="d-emoji">${d.emoji}</div>
+      <div class="d-name">${d.name}</div>
+      <div class="d-desc">${d.desc}</div>
+    </div>
+  `).join('');
+  g.querySelectorAll('.difficulty-card').forEach(c=>{
+    c.addEventListener('click', ()=>{
+      g.querySelectorAll('.difficulty-card').forEach(x=>x.classList.remove('selected'));
+      c.classList.add('selected'); selectedDifficulty=c.dataset.diff;
+    });
+  });
+})();
+
+let questionCount = 10;
+const qCountSlider = $('qCountSlider'), qCountInput = $('qCountInput'), qCountVal = $('qCountVal');
+function setQuestionCount(v){
+  v = Math.max(3, Math.min(1000, parseInt(v)||10));
+  questionCount = v;
+  qCountSlider.value = v; qCountInput.value = v; qCountVal.textContent = v;
+}
+qCountSlider.addEventListener('input', ()=>setQuestionCount(qCountSlider.value));
+qCountInput.addEventListener('input', ()=>{
+  const v = qCountInput.value.replace(/\D/g,'').slice(0,4);
+  if(qCountInput.value !== v) qCountInput.value = v;
+  const n = parseInt(v);
+  if(n >= 3 && n <= 1000){ questionCount = n; qCountSlider.value = n; qCountVal.textContent = n; }
+});
+qCountInput.addEventListener('blur', ()=>setQuestionCount(qCountInput.value));
+setQuestionCount(10);
+
+const lessonYearFromEl = $('lessonYearFrom'), lessonYearToEl = $('lessonYearTo');
+let lessonYearFrom = 2000, lessonYearTo = 2026;
+(function populateYearSelects(){
+  let optsFrom = '', optsTo = '';
+  for(let y=2000;y<=2026;y++){
+    optsFrom += `<option value="${y}" ${y===2000?'selected':''}>${y}</option>`;
+    optsTo += `<option value="${y}" ${y===2026?'selected':''}>${y}</option>`;
+  }
+  lessonYearFromEl.innerHTML = optsFrom;
+  lessonYearToEl.innerHTML = optsTo;
+  lessonYearFromEl.addEventListener('change', ()=>{ lessonYearFrom = +lessonYearFromEl.value; if(lessonYearFrom > lessonYearTo){ lessonYearToEl.value = lessonYearFrom; lessonYearTo = lessonYearFrom; } });
+  lessonYearToEl.addEventListener('change', ()=>{ lessonYearTo = +lessonYearToEl.value; if(lessonYearTo < lessonYearFrom){ lessonYearFromEl.value = lessonYearTo; lessonYearFrom = lessonYearTo; } });
+})();
+
+const lessonSetup=$('lessonSetup'), lessonActive=$('lessonActive'), lessonResults=$('lessonResults');
+$('startLessonBtn').addEventListener('click', startLesson);
+$('retryLessonBtn').addEventListener('click', ()=>{ lessonResults.style.display='none'; lessonSetup.style.display='block'; });
+$('backToSetupBtn').addEventListener('click', ()=>{ lessonResults.style.display='none'; lessonSetup.style.display='block'; });
+
+function shuffle(a){ const r=[...a]; for(let i=r.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [r[i],r[j]]=[r[j],r[i]]; } return r; }
+function pick(arr){ return arr[Math.floor(Math.random()*arr.length)]; }
+
+function normalizeStr(s){
+  return String(s).toLowerCase().trim().replace(/ё/g,'е').replace(/[^а-яa-z0-9\s]/g,' ').replace(/\s+/g,' ').trim();
+}
+function normalizeWord(s){
+  return String(s).toLowerCase().trim().replace(/ё/g,'е').replace(/\s+/g,'');
+}
+function levenshtein(a, b){
+  if(a.length === 0) return b.length;
+  if(b.length === 0) return a.length;
+  const m = [];
+  for(let i = 0; i <= b.length; i++) m[i] = [i];
+  for(let j = 0; j <= a.length; j++) m[0][j] = j;
+  for(let i = 1; i <= b.length; i++){
+    for(let j = 1; j <= a.length; j++){
+      if(b.charAt(i-1) === a.charAt(j-1)) m[i][j] = m[i-1][j-1];
+      else m[i][j] = Math.min(m[i-1][j-1]+1, m[i][j-1]+1, m[i-1][j]+1);
+    }
+  }
+  return m[b.length][a.length];
+}
+function checkMeaningInput(userAns, item){
+  const u = normalizeStr(userAns);
+  if(u.length < 2) return false;
+  const acceptable = [item.sh, ...item.syn].filter(Boolean);
+  for(const a of acceptable){
+    const na = normalizeStr(a);
+    if(!na) continue;
+    if(u === na) return true;
+    if(na.length >= 4 && u.includes(na)) return true;
+    if(u.length >= 4 && na.includes(u)) return true;
+    const uW = u.split(' ');
+    const aW = na.split(' ');
+    for(const aw of aW){ if(aw.length >= 3 && uW.includes(aw)) return true; }
+  }
+  return false;
+}
+function checkWordInput(userAns, item){
+  const u = normalizeWord(userAns);
+  const w = normalizeWord(item.w);
+  if(!u || !w) return false;
+  if(u === w) return true;
+  if(w.length >= 4 && levenshtein(u, w) <= 2) return true;
+  return false;
+}
+
+const TPL = {
+  meaning_choice: [w=>`Что означает «${w}»?`, w=>`Выбери правильное значение «${w}»`],
+  reverse_meaning: [sh=>`Какое слово означает: «${sh}»?`],
+  type_choice: [w=>`«${w}» — это сленг или мем?`],
+  synonym_choice: [w=>`Какой синоним подходит к «${w}»?`],
+  example_fill: [masked=>`Вставь правильное слово: «${masked}»`],
+  pick_most_popular: [()=>`Какое из этих слов популярнее всего?`],
+  pick_least_popular: [()=>`Какое из этих слов наименее популярно?`],
+  which_is_meme: [()=>`Какое из этих слов — мем?`],
+  which_is_slang: [()=>`Какое из этих слов — сленг?`],
+  which_is_older: [()=>`Какое слово появилось раньше всех?`],
+  which_is_newer: [()=>`Какое слово появилось позже всех?`],
+  popular: [w=>`Популярен ли «${w}» в разговорах?`],
+  year_choice: [w=>`С какого года «${w}»?`],
+  meme_desc: [sh=>`О чём речь: «${sh}»?`],
+  true_false_meaning: [w=>`Правда ли, что ниже — верное определение для «${w}»?`],
+  more_popular: [(a,b)=>`Что популярнее: «${a}» или «${b}»?`],
+  pick_era: [w=>`К какой эпохе относится «${w}»?`],
+  word_class: [w=>`«${w}» — это сленг, мем или обычное слово?`],
+  quote_choice: [w=>`Какая фраза связана с «${w}»?`],
+  origin_choice: [w=>`Откуда появился «${w}»?`],
+  situation_choice: [w=>`В какой ситуации используют «${w}»?`],
+  association_choice: [w=>`С чем ассоциируется «${w}»?`],
+  fill_blank_quote: [masked=>`Вставь пропущенное слово в цитату: «${masked}»`],
+  meaning_input: [w=>`Напиши своими словами, что означает «${w}»?`],
+  word_input: [sh=>`Напиши слово или мем, который означает: «${sh}»`],
+  quote_input: [masked=>`Вставь пропущенное слово: «${masked}»`]
+};
+function tpl(type, ...args){ const arr=TPL[type]; if(!arr || !arr.length) return ''; return pick(arr)(...args); }
+
+function makeQ(type, item, pool, optCount){
+  try {
+    if(type==='meaning_choice'){
+      const wrong = shuffle(pool.filter(x=>x.w!==item.w && x.t===item.t)).slice(0, optCount-1).map(x=>x.sh);
+      if(wrong.length < optCount-1) return null;
+      return { type, question: tpl(type,item.w), item, options: shuffle([item.sh,...wrong]), correctAnswer: item.sh };
+    }
+    if(type==='reverse_meaning' || type==='meme_desc'){
+      const wrong = shuffle(pool.filter(x=>x.w!==item.w && x.t===item.t)).slice(0, optCount-1).map(x=>x.w);
+      if(wrong.length < optCount-1) return null;
+      return { type, question: tpl(type,item.sh), item, options: shuffle([item.w,...wrong]), correctAnswer: item.w };
+    }
+    if(type==='type_choice'){
+      const correct = item.t==='meme' ? 'Мем' : 'Сленг';
+      return { type, question: tpl(type,item.w), item, options:['Сленг','Мем'], correctAnswer: correct };
+    }
+    if(type==='popular'){
+      const correct = item.p>50 ? 'Да, популярен' : 'Нет, непопулярен';
+      return { type, question: tpl(type,item.w), item, options:['Да, популярен','Нет, непопулярен'], correctAnswer: correct };
+    }
+    if(type==='year_choice'){
+      const wrongY = shuffle([2000,2002,2004,2006,2008,2010,2012,2014,2016,2018,2020,2022,2024,2026].filter(y=>y!==item.yf)).slice(0,4);
+      return { type, question: tpl(type,item.w), item, options: shuffle([item.yf,...wrongY]), correctAnswer: item.yf };
+    }
+    if(type==='synonym_choice'){
+      const others = pool.filter(x=>x.w!==item.w);
+      const wrongS = shuffle(others.flatMap(x=>x.syn).filter(s=>!item.syn.includes(s))).slice(0, optCount-1);
+      if(wrongS.length < optCount-1) return null;
+      const correct = item.syn[0];
+      if(!correct) return null;
+      return { type, question: tpl(type,item.w), item, options: shuffle([correct,...wrongS]), correctAnswer: correct };
+    }
+    if(type==='example_fill'){
+      if(!item.e.toLowerCase().includes(item.w.toLowerCase())) return null;
+      const masked = item.e.replace(new RegExp(item.w.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'gi'), '___');
+      const wrong = shuffle(pool.filter(x=>x.w!==item.w && x.t===item.t)).slice(0, optCount-1).map(x=>x.w);
+      if(wrong.length < optCount-1) return null;
+      return { type, question: tpl(type, masked), item, options: shuffle([item.w,...wrong]), correctAnswer: item.w };
+    }
+    if(type==='pick_most_popular' || type==='pick_least_popular'){
+      const group = shuffle(pool).slice(0,4);
+      const target = type==='pick_most_popular' ? Math.max(...group.map(x=>x.p)) : Math.min(...group.map(x=>x.p));
+      const winners = group.filter(x=>x.p===target);
+      if(winners.length !== 1) return null;
+      const winner = winners[0];
+      return { type, question: tpl(type), item: winner, options: shuffle(group.map(x=>x.w)), correctAnswer: winner.w };
+    }
+    if(type==='which_is_meme' || type==='which_is_slang'){
+      const needMeme = type==='which_is_meme';
+      if(needMeme && item.t!=='meme') return null;
+      if(!needMeme && item.t==='meme') return null;
+      const wrong = shuffle(pool.filter(x=>x.w!==item.w && ((needMeme && x.t!=='meme') || (!needMeme && x.t==='meme')))).slice(0,3).map(x=>x.w);
+      if(wrong.length<3) return null;
+      return { type, question: tpl(type), item, options: shuffle([item.w,...wrong]), correctAnswer: item.w };
+    }
+    if(type==='which_is_older' || type==='which_is_newer'){
+      const group = shuffle(pool.filter(x=>x.w!==item.w)).slice(0,3);
+      if(group.length<3) return null;
+      const all = [item, ...group];
+      const targetY = type==='which_is_older' ? Math.min(...all.map(x=>x.yf)) : Math.max(...all.map(x=>x.yf));
+      const winners = all.filter(x=>x.yf===targetY);
+      if(winners.length !== 1) return null;
+      const winner = winners[0];
+      return { type, question: tpl(type), item: winner, options: shuffle(all.map(x=>x.w)), correctAnswer: winner.w };
+    }
+    if(type==='true_false_meaning'){
+      const isTrue = Math.random() < 0.5;
+      let otherMeaning;
+      if(isTrue){ otherMeaning = item.sh; }
+      else {
+        const others = pool.filter(x=>x.w!==item.w && x.sh!==item.sh);
+        if(others.length === 0) return null;
+        otherMeaning = pick(others).sh;
+      }
+      const question = `Правда ли, что «${item.w}» — это «${otherMeaning}»?`;
+      return { type, question, item, options:['Да','Нет'], correctAnswer: isTrue?'Да':'Нет' };
+    }
+    if(type==='more_popular'){
+      const other = pick(pool.filter(x=>x.w!==item.w && x.p!==item.p));
+      if(!other) return null;
+      const question = tpl(type, item.w, other.w);
+      const winner = item.p > other.p ? item : other;
+      return { type, question, item: winner, options: shuffle([item.w, other.w]), correctAnswer: winner.w };
+    }
+    if(type==='pick_era'){
+      const eras = [
+        { label:'2000–2005', min:2000, max:2005 },
+        { label:'2006–2010', min:2006, max:2010 },
+        { label:'2011–2015', min:2011, max:2015 },
+        { label:'2016–2020', min:2016, max:2020 },
+        { label:'2021–2026', min:2021, max:2026 }
+      ];
+      const correctEra = eras.find(e=>item.yf>=e.min && item.yf<=e.max);
+      if(!correctEra) return null;
+      return { type, question: tpl(type,item.w), item, options: eras.map(e=>e.label), correctAnswer: correctEra.label };
+    }
+    if(type==='word_class'){
+      const correct = item.t==='meme' ? 'Мем' : (item.t==='useful' ? 'Обычное слово' : 'Сленг');
+      return { type, question: tpl(type,item.w), item, options:['Сленг','Мем','Обычное слово'], correctAnswer: correct };
+    }
+    if(type==='quote_choice'){
+      const wrongItems = shuffle(D.filter(x=>x.w!==item.w && x.t===item.t && x.e)).slice(0, optCount-1);
+      if(wrongItems.length < optCount-1) return null;
+      const maskCorrect = maskWord(item.e, item.w);
+      const options = shuffle([maskCorrect, ...wrongItems.map(x=>maskWord(x.e, x.w))]);
+      return { type, question: tpl(type, item.w), item, options, correctAnswer: maskCorrect };
+    }
+    if(type==='origin_choice'){
+      const wrongItems = shuffle(D.filter(x=>x.w!==item.w && x.t===item.t && x.d)).slice(0, optCount-1);
+      if(wrongItems.length < optCount-1) return null;
+      const maskCorrect = maskWord(item.d, item.w);
+      const options = shuffle([maskCorrect, ...wrongItems.map(x=>maskWord(x.d, x.w))]);
+      return { type, question: tpl(type, item.w), item, options, correctAnswer: maskCorrect };
+    }
+    if(type==='situation_choice'){
+      const wrongItems = shuffle(D.filter(x=>x.w!==item.w && x.t===item.t && x.sh)).slice(0, optCount-1);
+      if(wrongItems.length < optCount-1) return null;
+      const maskCorrect = maskWord(item.sh, item.w);
+      const options = shuffle([maskCorrect, ...wrongItems.map(x=>maskWord(x.sh, x.w))]);
+      return { type, question: tpl(type, item.w), item, options, correctAnswer: maskCorrect };
+    }
+    if(type==='association_choice'){
+      const wrongItems = shuffle(D.filter(x=>x.w!==item.w && x.t===item.t && x.syn.length)).slice(0, optCount-1);
+      if(wrongItems.length < optCount-1) return null;
+      const correctSyn = item.syn[0];
+      if(!correctSyn) return null;
+      const maskCorrect = maskWord(correctSyn, item.w);
+      const options = shuffle([maskCorrect, ...wrongItems.map(x=>maskWord(x.syn[0], x.w))]);
+      return { type, question: tpl(type, item.w), item, options, correctAnswer: maskCorrect };
+    }
+    if(type==='fill_blank_quote'){
+      if(!item.e.toLowerCase().includes(item.w.toLowerCase())) return null;
+      const masked = item.e.replace(new RegExp(item.w.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'gi'), '___');
+      const wrong = shuffle(D.filter(x=>x.w!==item.w && x.t===item.t && x.w)).slice(0, optCount-1).map(x=>x.w);
+      if(wrong.length < optCount-1) return null;
+      return { type, question: tpl(type, masked), item, options: shuffle([item.w,...wrong]), correctAnswer: item.w };
+    }
+    if(type==='meaning_input'){
+      return { type, question: tpl(type, item.w), item, isTextInput: true, correctAnswer: item.sh };
+    }
+    if(type==='word_input'){
+      return { type, question: tpl(type, item.sh), item, isTextInput: true, correctAnswer: item.w };
+    }
+    if(type==='quote_input'){
+      if(!item.e.toLowerCase().includes(item.w.toLowerCase())) return null;
+      const masked = item.e.replace(new RegExp(item.w.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'gi'), '___');
+      return { type, question: tpl(type, masked), item, isTextInput: true, correctAnswer: item.w };
+    }
+  } catch(e){ console.warn('makeQ error:', type, e); return null; }
+  return null;
+}
+
+let lastTypes = [];
+function pickType(available){
+  const filtered = available.filter(t=>!lastTypes.includes(t));
+  const pool = filtered.length>0 ? filtered : available;
+  const chosen = pick(pool);
+  lastTypes.push(chosen);
+  if(lastTypes.length>4) lastTypes.shift();
+  return chosen;
+}
+
+function generateLesson(diffKey, count, yearFrom, yearTo){
+  const cfg = DIFFICULTIES[diffKey];
+  if(!cfg) return [];
+  let pool = D.filter(x => x.yf <= yearTo && yearFrom <= x.yt);
+  if(pool.length < 10) pool = [...D];
+  const qs = [];
+  const usedPairs = new Set();
+  const usedMatch = new Set();
+  lastTypes = [];
+  const maxQ = Math.min(count, 1000);
+  let attempts = 0;
+  let allowDuplicates = false;
+  const uniqueBudget = Math.max(3000, Math.min(maxQ * 20, 30000));
+  const totalBudget = Math.max(uniqueBudget * 2, maxQ * 80);
+
+  while(qs.length < maxQ && attempts < totalBudget){
+    attempts++;
+    if(attempts > uniqueBudget) allowDuplicates = true;
+    if(attempts % 50 === 0) lastTypes = [];
+    const type = pickType(cfg.types);
+    if(type==='match' || type==='synonym_match'){
+      const cands = shuffle(pool.filter(x => (allowDuplicates || !usedMatch.has(x.w)) && (type!=='synonym_match' || x.syn.length>0))).slice(0,4);
+      if(cands.length < 4) continue;
+      cands.forEach(c => usedMatch.add(c.w));
+      const q = type === 'match'
+        ? { type:'match', question:'Соедини описание с правильным словом', items: cands, pairs: cands.map(c=>({w:c.w,sh:c.sh})), correctAnswer:'Все пары' }
+        : { type:'synonym_match', question:'Соедини слово с его синонимом', items: cands, pairs: cands.map(c=>({w:c.w,sh:c.syn[0]})), correctAnswer:'Все пары' };
+      qs.push(q);
+      continue;
+    }
+    const item = pick(pool);
+    if(!item) continue;
+    const key = type + ':' + item.w;
+    if(usedPairs.has(key) && !allowDuplicates) continue;
+    const res = makeQ(type, item, pool, cfg.options);
+    if(res){ usedPairs.add(key); qs.push(res); }
+  }
+  return qs;
+}
+
+let lessonQuestions=[], lessonIndex=0, lessonCorrect=0, lessonMistakes=0, lessonAnswered=false, lessonStartTime=0, lessonMistakeItems=[], lessonDetails=[], currentMatchState=null;
+let lessonCoinsEarned = 0;
+let lessonStats = { easy:{correct:0,total:0}, normal:{correct:0,total:0}, hard:{correct:0,total:0}, expert:{correct:0,total:0} };
+
+function startLesson(){
+  const qs = generateLesson(selectedDifficulty, questionCount, lessonYearFrom, lessonYearTo);
+  if(!qs.length){ showToast('Не удалось сгенерировать урок. Попробуй ещё раз!'); return; }
+  lessonQuestions = qs; lessonIndex=0; lessonCorrect=0; lessonMistakes=0;
+  lessonMistakeItems=[]; lessonDetails=[]; lessonStartTime=Date.now(); currentMatchState=null;
+  lessonStats = { easy:{correct:0,total:0}, normal:{correct:0,total:0}, hard:{correct:0,total:0}, expert:{correct:0,total:0} };
+  lessonCoinsEarned = 0;
+  lessonDictionaryActive = false;
+  lessonHintUsed = false;
+  lessonInProgress=true;
+  lessonSetup.style.display='none'; lessonResults.style.display='none'; lessonActive.style.display='block';
+  updateHintButton(); updateDictButton();
+  renderQ();
+}
+
+function updateHintButton(){
+  const btn = $('hintBtn'); if(!btn) return;
+  btn.disabled = lessonHintUsed;
+  btn.textContent = lessonHintUsed ? '💡 Использована' : `💡 Подсказка (100 🪙)`;
+}
+function updateDictButton(){
+  const btn = $('dictBtn'); if(!btn) return;
+  btn.textContent = lessonDictionaryActive ? '📖 Открыть словарь' : `📖 Словарь (10000 🪙)`;
+}
+
+function renderQ(){
+  lessonAnswered=false;
+  lessonHintUsed = false;
+  const q = lessonQuestions[lessonIndex]; if(!q) return finishLesson();
+  $('lessonCounter').textContent = `Задание ${lessonIndex+1}/${lessonQuestions.length}`;
+  $('lessonProgressFill').style.width = `${(lessonIndex/lessonQuestions.length)*100}%`;
+  $('lessonMistakes').textContent = `❌ ${lessonMistakes}`;
+  const diff = TYPE_DIFFICULTY[q.type] || 'normal';
+  const diffEl = $('lessonDifficulty');
+  diffEl.className = 'difficulty-label ' + diff;
+  diffEl.textContent = DIFF_LABELS[diff].text;
+  $('lessonQuestion').textContent = q.question;
+  const fb = $('lessonFeedback'); fb.className='feedback-box'; fb.style.display='none';
+  const hintOut = $('hintOutput'); hintOut.className='hint-output'; hintOut.innerHTML='';
+  const submitBtn = $('lessonSubmitBtn'); submitBtn.textContent='Ответить'; submitBtn.disabled=false;
+  const mascots=['😀','😃','😄','😁','😆','🥹','😅','😂','🤣','☺️','🥲','😊','😇','🙂','🙃','😉','😌','😍','😘','🤪','🤨','🧐','🤓','😎','🤩','🥳'];
+  $('lessonMascot').textContent = pick(mascots);
+  $('lessonSpeech').textContent = q.isTextInput ? 'Напиши свой ответ!' : (q.type==='match'?'Соедини описания с правильными словами!':(q.type==='synonym_match'?'Соедини слово с его синонимом!':'Выбери правильный ответ!'));
+  const oc = $('lessonOptionsContainer');
+  updateHintButton(); updateDictButton();
+
+  if(q.type==='match' || q.type==='synonym_match'){
+    const leftLabel = q.type==='match' ? '📝 ОПИСАНИЯ' : '📝 СИНОНИМЫ';
+    const rightLabel = q.type==='match' ? '💬 СЛЕНГИ / МЕМЫ' : '💬 СЛОВА';
+    currentMatchState = { leftSelected: null, rightSelected: null, pairs: [] };
+    oc.innerHTML = `<div class="match-progress">Соединено: <b id="matchProgressCount">0</b> / ${q.items.length}</div>
+    <div class="match-container">
+      <div class="match-col left">
+        <div class="match-col-header">${leftLabel}</div>
+        <div id="matchLeft" style="display:flex;flex-direction:column;gap:8px;"></div>
+      </div>
+      <div class="match-col right">
+        <div class="match-col-header">${rightLabel}</div>
+        <div id="matchRight" style="display:flex;flex-direction:column;gap:8px;"></div>
+      </div>
+    </div>`;
+    const L = $('matchLeft'), R = $('matchRight');
+    shuffle(q.items).forEach(it=>{
+      const d = document.createElement('div');
+      d.className='match-item'; d.dataset.word=it.w; d.textContent=it.sh;
+      d.addEventListener('click',()=>handleMatch(d,'left')); L.appendChild(d);
+    });
+    shuffle(q.items).forEach(it=>{
+      const d = document.createElement('div');
+      d.className='match-item'; d.dataset.word=it.w; d.textContent=it.w;
+      d.addEventListener('click',()=>handleMatch(d,'right')); R.appendChild(d);
+    });
+    submitBtn.textContent='Проверить';
+  } else if(q.isTextInput){
+    let placeholder = 'Напиши ответ...';
+    if(q.type === 'meaning_input') placeholder = 'Напиши значение этого слова/мема...';
+    else if(q.type === 'word_input') placeholder = 'Напиши слово или мем...';
+    else if(q.type === 'quote_input') placeholder = 'Вставь пропущенное слово...';
+    oc.innerHTML = `<div class="text-input-wrap">
+      <input type="text" id="textAnswerInput" class="text-answer-input" placeholder="${placeholder}" autocomplete="off" maxlength="200">
+      <div class="text-hint" id="textAnswerHint" style="display:none;"></div>
+    </div>`;
+    setTimeout(()=>{
+      const inp = $('textAnswerInput');
+      if(inp){
+        inp.focus();
+        inp.addEventListener('keydown', (e) => {
+          if(e.key === 'Enter'){ e.preventDefault(); $('lessonSubmitBtn').click(); }
+        });
+      }
+    }, 50);
+  } else {
+    const cols = q.options.length<=2 ? '1fr 1fr' : '1fr';
+    oc.innerHTML = `<div class="options-grid" style="grid-template-columns:${cols};">${q.options.map((o,i)=>`<button class="option-btn" data-i="${i}">${esc(String(o))}</button>`).join('')}</div>`;
+    oc.querySelectorAll('.option-btn').forEach(b=>{
+      b.addEventListener('click', ()=>{
+        if(lessonAnswered) return;
+        oc.querySelectorAll('.option-btn').forEach(x=>x.classList.remove('selected'));
+        b.classList.add('selected');
+      });
+    });
+  }
+}
+
+function handleMatch(el, side){
+  if(lessonAnswered || el.classList.contains('matched')) return;
+  const state = currentMatchState;
+  if(side==='left'){
+    if(state.leftSelected) state.leftSelected.classList.remove('selected');
+    state.leftSelected = el; el.classList.add('selected');
+  } else {
+    if(state.rightSelected) state.rightSelected.classList.remove('selected');
+    state.rightSelected = el; el.classList.add('selected');
+  }
+  if(state.leftSelected && state.rightSelected){
+    const left = state.leftSelected, right = state.rightSelected;
+    const isCorrect = left.dataset.word === right.dataset.word;
+    if(isCorrect){
+      left.classList.add('matched'); right.classList.add('matched');
+      left.classList.remove('selected'); right.classList.remove('selected');
+      state.pairs.push({ left: left.dataset.word, right: right.dataset.word, correct: true });
+    } else {
+      left.classList.remove('selected'); right.classList.remove('selected');
+      state.pairs.push({ left: left.dataset.word, right: right.dataset.word, correct: false });
+    }
+    state.leftSelected = null; state.rightSelected = null;
+    const connected = document.querySelectorAll('.match-item.matched').length / 2;
+    const progressEl = $('matchProgressCount');
+    if(progressEl) progressEl.textContent = connected;
+  }
+}
+
+$('hintBtn').addEventListener('click', ()=>{
+  if(!lessonInProgress) return;
+  if(lessonHintUsed){ showToast('Подсказка уже использована на этом задании'); return; }
+  if(user.coins < 100){ showToast('Не хватает монет! Нужно 100 🪙'); return; }
+  user.coins -= 100;
+  saveUser(); updateCoinsUI();
+  lessonHintUsed = true;
+  updateHintButton();
+  const q = lessonQuestions[lessonIndex];
+  if(q.type==='match' || q.type==='synonym_match'){
+    const pairs = q.pairs.map(p => `<b>${esc(p.sh)}</b> → ${esc(p.w)}`).join('<br>');
+    const hintOut = $('hintOutput');
+    hintOut.innerHTML = `<b>💡 Правильные пары:</b><br>${pairs}`;
+    hintOut.classList.add('show');
+  } else if(q.isTextInput){
+    const hintOut = $('hintOutput');
+    let hintText = '';
+    if(q.type==='meaning_input'){
+      const vars = [q.item.sh, ...q.item.syn].filter(Boolean);
+      hintText = `<b>💡 Правильные варианты:</b> ${vars.map(esc).join(', ')}`;
+    } else {
+      hintText = `<b>💡 Правильный ответ:</b> ${esc(q.item.w)}`;
+    }
+    hintOut.innerHTML = hintText;
+    hintOut.classList.add('show');
+  } else {
+    document.querySelectorAll('.option-btn').forEach(b=>{
+      if(b.textContent === String(q.correctAnswer)) b.classList.add('hint-highlight');
+    });
+  }
+  showToast('💡 Подсказка использована (-100 🪙)');
+});
+
+$('dictBtn').addEventListener('click', ()=>{
+  if(!lessonInProgress) return;
+  if(lessonDictionaryActive){ openQuickDictionary(); return; }
+  if(user.coins < 10000){ showToast('Не хватает монет! Нужно 10000 🪙'); return; }
+  user.coins -= 10000;
+  saveUser(); updateCoinsUI();
+  lessonDictionaryActive = true;
+  updateDictButton();
+  showToast('📖 Словарь разблокирован до конца урока!');
+  openQuickDictionary();
+});
+
+$('lessonSubmitBtn').addEventListener('click', ()=>{
+  if(lessonAnswered){ lessonIndex++; if(lessonIndex>=lessonQuestions.length) finishLesson(); else renderQ(); return; }
+  const q = lessonQuestions[lessonIndex];
+  let isCorrect=false, feedbackText='', playerAnswer='', mistakeCount=0;
+
+  if(q.type==='match' || q.type==='synonym_match'){
+    const state = currentMatchState;
+    if(!state || state.pairs.length === 0){ showToast('Соедини хотя бы одну пару!'); return; }
+    const totalPairs = q.items.length;
+    const correctPairs = state.pairs.filter(p => p.correct).length;
+    mistakeCount = totalPairs - correctPairs;
+    isCorrect = (mistakeCount === 0);
+    playerAnswer = `Верно ${correctPairs} из ${totalPairs}`;
+    if(!isCorrect) feedbackText = `❌ Ошибок: ${mistakeCount}. Правильных пар: ${correctPairs}/${totalPairs}`;
+    document.querySelectorAll('.match-item:not(.matched)').forEach(el => el.classList.add('wrong-pair'));
+  } else if(q.isTextInput){
+    const inp = $('textAnswerInput');
+    if(!inp || !inp.value.trim()){ showToast('Напиши ответ!'); return; }
+    playerAnswer = inp.value.trim();
+    if(q.type === 'meaning_input') isCorrect = checkMeaningInput(playerAnswer, q.item);
+    else isCorrect = checkWordInput(playerAnswer, q.item);
+    inp.disabled = true;
+    inp.classList.add(isCorrect ? 'correct' : 'wrong');
+    const hint = $('textAnswerHint');
+    if(hint){
+      hint.style.display = 'block';
+      if(q.type === 'meaning_input'){
+        const variants = [q.item.sh, ...q.item.syn].filter(Boolean);
+        hint.innerHTML = `<b>Принимаемые варианты:</b> ${variants.map(esc).join(', ')}`;
+      } else {
+        hint.innerHTML = `<b>Правильный ответ:</b> ${esc(q.item.w)}`;
+      }
+    }
+    if(!isCorrect){ mistakeCount = 1; feedbackText = '❌ Неправильно.'; }
+  } else {
+    const sel = document.querySelector('.option-btn.selected');
+    if(!sel){ showToast('Выбери вариант ответа!'); return; }
+    playerAnswer = sel.textContent;
+    isCorrect = String(sel.textContent)===String(q.correctAnswer);
+    if(!isCorrect) { feedbackText = `❌ Неправильно. Правильный ответ: ${esc(String(q.correctAnswer))}`; mistakeCount = 1; }
+  }
+  lessonDetails.push({
+    q: q.question, player: playerAnswer,
+    correct: (q.type==='match' || q.type==='synonym_match') ? 'Все пары' : String(q.correctAnswer),
+    ok: isCorrect
+  });
+  const qDiff = TYPE_DIFFICULTY[q.type] || 'normal';
+  lessonStats[qDiff].total++;
+  if(isCorrect) lessonStats[qDiff].correct++;
+
+  const fb = $('lessonFeedback');
+  if(isCorrect){
+    lessonCorrect++;
+    lessonCoinsEarned++;
+    addCoins(1);
+    playWinSound();
+    fb.className='feedback-box show ok'; fb.textContent='✅ Правильно! +1 🪙';
+    if(q.item && q.item.w){ const cnt=user.mastered.filter(x=>x===q.item.w).length+1;
+      if(cnt>=2 && !user.mastered.includes(q.item.w)) user.mastered.push(q.item.w);
+      saveUser(); }
+  } else {
+    lessonMistakes += mistakeCount;
+    if(q.item && q.item.w) lessonMistakeItems.push(q.item);
+    playLoseSound();
+    fb.className='feedback-box show bad'; fb.textContent=feedbackText||'❌ Неправильно!';
+  }
+  if(q.type!=='match' && q.type!=='synonym_match' && !q.isTextInput){
+    document.querySelectorAll('.option-btn').forEach(b=>{
+      if(b.textContent===String(q.correctAnswer)) b.classList.add('correct');
+      else if(b.classList.contains('selected')) b.classList.add('wrong');
+    });
+  }
+  lessonAnswered=true;
+  $('lessonSubmitBtn').textContent = lessonIndex<lessonQuestions.length-1 ? 'Следующий →' : 'Завершить';
+});
+
+$('abortLessonBtn').addEventListener('click', ()=>{
+  if(!confirm('Завершить урок? Прогресс не сохранится.')) return;
+  abortLesson();
+});
+function abortLesson(){
+  lessonInProgress = false;
+  lessonDictionaryActive = false;
+  lessonActive.style.display='none'; lessonResults.style.display='none'; lessonSetup.style.display='block';
+  showToast('Урок прерван. Начни заново!');
+}
+
+function finishLesson(){
+  lessonInProgress=false;
+  lessonDictionaryActive = false;
+  lessonActive.style.display='none'; lessonResults.style.display='block';
+  const el = Math.floor((Date.now()-lessonStartTime)/1000);
+  const timeStr = `${Math.floor(el/60)}:${String(el%60).padStart(2,'0')}`;
+  const total = lessonQuestions.length;
+  const percent = total>0 ? Math.round((lessonCorrect/total)*100) : 0;
+  $('resCorrect').textContent = lessonCorrect;
+  $('resTotal').textContent = total;
+  $('resMistakes').textContent = lessonMistakes;
+  $('resCoins').textContent = lessonCoinsEarned;
+  let title='😐 Неплохо!', sub=`${percent}% правильных. Продолжай!`;
+  if(percent>=80){ title='🤩 Отлично!'; sub=`${percent}%! Ты эксперт!`; }
+  else if(percent>=60){ title='😎 Хорошо!'; sub=`${percent}% правильных. Ещё практики!`; }
+  else if(percent<40){ title='🤔 Подтяни...'; sub=`${percent}% правильных. Попробуй ещё!`; }
+  $('resultsTitle').textContent = title;
+  $('resultsSubtitle').textContent = sub;
+
+  const breakdownEl = $('difficultyBreakdown');
+  const diffs = ['easy','normal','hard','expert'];
+  const labels = { easy:'🟢 Лёгкие', normal:'🟡 Нормальные', hard:'🟠 Сложные', expert:'🟣 Экспертные' };
+  let breakdownHTML = '<div class="difficulty-stats"><div class="difficulty-stats-title">📊 Разбор по сложности</div>';
+  diffs.forEach(d => {
+    const s = lessonStats[d];
+    if(s.total === 0) return;
+    const wrong = s.total - s.correct;
+    breakdownHTML += `<div class="difficulty-stats-row">
+      <span class="label ${d}">${labels[d]}</span>
+      <span class="values"><span class="correct">✅ ${s.correct}</span><span class="total"> / </span><span class="wrong">❌ ${wrong}</span><span class="total"> (${s.total})</span></span>
+    </div>`;
+  });
+  breakdownHTML += '</div>';
+  breakdownEl.innerHTML = breakdownHTML;
+
+  const rev = $('mistakesReviewContainer');
+  if(lessonMistakeItems.length){
+    rev.innerHTML = `<div style="font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:700;margin-bottom:12px;">📝 Работа над ошибками:</div>
+      ${lessonMistakeItems.map(it=>`<div style="background:rgba(248,113,113,.08);border:1px solid rgba(248,113,113,.3);border-radius:12px;padding:12px 16px;margin-bottom:8px;"><div style="font-weight:700;color:var(--red);margin-bottom:4px;">${esc(it.w)}</div><div style="font-size:13px;color:var(--muted);">${esc(it.sh)}</div></div>`).join('')}`;
+  } else {
+    rev.innerHTML = '<div style="text-align:center;color:var(--green);font-size:14px;">🎉 Ни одной ошибки!</div>';
+  }
+  user.totalLessons++;
+  if(percent>=60) user.wins++;
+  addXP(lessonCorrect*10); updateStreak();
+  user.history.unshift({
+    date: new Date().toLocaleDateString('ru-RU',{day:'numeric',month:'short',year:'numeric'}),
+    score: lessonCorrect, total, time: timeStr,
+    difficulty: selectedDifficulty, percent, details: lessonDetails
+  });
+  if(user.history.length>10) user.history = user.history.slice(0, 10);
+  saveUser();
+  $('streakBadge').textContent = user.streak;
+}
+
+const ratingsYearFromEl = $('ratingsYearFrom'), ratingsYearToEl = $('ratingsYearTo');
+let ratingsYearFrom = 2000, ratingsYearTo = 2026, ratingsMode = 50;
+let ratingsQueue = [], ratingsIndex = 0, ratingsActive = false;
+
+(function populateRatingsYears(){
+  let a = '', b = '';
+  for(let y=2000;y<=2026;y++){
+    a += `<option value="${y}" ${y===2000?'selected':''}>${y}</option>`;
+    b += `<option value="${y}" ${y===2026?'selected':''}>${y}</option>`;
+  }
+  ratingsYearFromEl.innerHTML = a; ratingsYearToEl.innerHTML = b;
+  ratingsYearFromEl.addEventListener('change', ()=>{ ratingsYearFrom = +ratingsYearFromEl.value; if(ratingsYearFrom > ratingsYearTo){ ratingsYearToEl.value = ratingsYearFrom; ratingsYearTo = ratingsYearFrom; } if(ratingsActive) buildRatingsQueue(); });
+  ratingsYearToEl.addEventListener('change', ()=>{ ratingsYearTo = +ratingsYearToEl.value; if(ratingsYearTo < ratingsYearFrom){ ratingsYearFromEl.value = ratingsYearTo; ratingsYearFrom = ratingsYearTo; } if(ratingsActive) buildRatingsQueue(); });
+})();
+
+$('ratingsModes').querySelectorAll('.rating-mode-btn').forEach(b=>{
+  b.addEventListener('click', ()=>{
+    $('ratingsModes').querySelectorAll('.rating-mode-btn').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active'); ratingsMode = +b.dataset.count;
+    if(ratingsActive) buildRatingsQueue();
+  });
+});
+
+$('startRatingsBtn').addEventListener('click', ()=>{ ratingsActive = true; buildRatingsQueue(); });
+
+function buildRatingsQueue(){
+  let pool = D.filter(x => x.yf <= ratingsYearTo && ratingsYearFrom <= x.yt);
+  if(pool.length < 5) pool = [...D];
+  ratingsQueue = shuffle(pool).slice(0, Math.min(ratingsMode, pool.length));
+  ratingsIndex = 0; renderRatingCard();
+}
+
+function renderRatingCard(){
+  const content = $('ratingsContent');
+  if(!ratingsQueue.length){ content.innerHTML = '<div class="empty">Нет данных</div>'; return; }
+  const item = ratingsQueue[ratingsIndex];
+  const rating = user.ratings[item.w] || 0;
+  const progress = ratingsIndex + 1;
+  const ratedCount = ratingsQueue.filter(q => user.ratings[q.w] !== undefined).length;
+  content.innerHTML = `
+    <div class="rating-progress">
+      <div class="rating-progress-bar"><div class="rating-progress-fill" style="width:${(ratedCount/ratingsQueue.length)*100}%"></div></div>
+      <div class="rating-progress-text">${progress} / ${ratingsQueue.length} · оценено: ${ratedCount}</div>
+    </div>
+    <div class="rating-card">
+      <div class="rating-word">${esc(item.w)}</div>
+      <div class="rating-badges">
+        <span class="badge badge-type ${item.t==='meme'?'meme':''}">${item.t==='meme'?'МЕМ':(item.t==='useful'?'ПОЛЕЗНО':'СЛЕНГ')}</span>
+        <span class="badge badge-year">${item.yf}–${item.yt}</span>
+        ${rating ? `<span class="rating-badge-self">⭐ ${rating} / 5</span>` : ''}
+      </div>
+      <div class="rating-desc">${esc(item.d)}</div>
+      <div class="rating-syn"><b style="color:var(--purple);">Синонимы:</b> ${item.syn.map(s => esc(s)).join(', ')}</div>
+      <div class="rating-example">«${esc(item.e)}»</div>
+      <div class="rating-stars">${[1,2,3,4,5].map(n => `<button class="star-btn ${n<=rating?'active':''}" data-star="${n}">★</button>`).join('')}</div>
+    </div>
+    <div class="rating-nav">
+      <button class="btn btn-secondary" id="ratingPrev" ${ratingsIndex===0?'disabled':''} style="margin-top:0;">← Назад</button>
+      <button class="btn btn-primary" id="ratingNext">${ratingsIndex===ratingsQueue.length-1?'🏁 Готово':'Дальше →'}</button>
+    </div>
+  `;
+  content.querySelectorAll('.star-btn').forEach(b => {
+    b.addEventListener('click', () => {
+      const isFirst = user.ratings[item.w] === undefined;
+      user.ratings[item.w] = +b.dataset.star;
+      if(isFirst){ addCoins(1); showToast('+1 🪙 за первую оценку!'); }
+      saveUser();
+      renderRatingCard();
+    });
+  });
+  $('ratingPrev').addEventListener('click', () => { if(ratingsIndex>0){ratingsIndex--; renderRatingCard();} });
+  $('ratingNext').addEventListener('click', () => {
+    if(ratingsIndex < ratingsQueue.length-1){ ratingsIndex++; renderRatingCard(); }
+    else {
+      showToast(`🏆 Ты оценил ${Object.keys(user.ratings).length} слов!`);
+      ratingsActive = false;
+      content.innerHTML = `<div style="text-align:center;padding:40px 20px;"><div style="font-size:64px;margin-bottom:16px;">🎉</div><h3 style="font-family:'Space Grotesk',sans-serif;font-size:24px;margin-bottom:8px;">Оценивание завершено!</h3><p style="color:var(--muted);margin-bottom:16px;">Ты поставил оценки ${Object.keys(user.ratings).length} словам</p><button class="btn btn-primary" id="restartRatingsBtn">🔄 Ещё раз</button></div>`;
+      $('restartRatingsBtn').addEventListener('click', ()=>{ ratingsActive=true; buildRatingsQueue(); });
+    }
+  });
+}
+
+function initApp(){
+  try { renderDictionary(); } catch(e){ console.error(e); }
+  try { renderProfile(); } catch(e){ console.error(e); }
+  try { $('streakBadge').textContent = user.streak; } catch(e){}
+  try { updateCoinsUI(); } catch(e){}
+  try {
+    currentTab = 'all'; currentYear = 'all'; searchQuery = '';
+    if(searchEl) searchEl.value = '';
+    if(clearEl) clearEl.classList.remove('show');
+    tabsEl.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === 'all'));
+    yearsEl.querySelectorAll('.year-btn').forEach(b => b.classList.toggle('active', b.dataset.year === 'all'));
+    if(yearFilter) yearFilter.value = 'all';
+    renderDictionary();
+  } catch(e){}
+}
+initApp();
+</script>
+</body>
+</html>
